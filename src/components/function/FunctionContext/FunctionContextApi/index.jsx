@@ -7,7 +7,8 @@ let { Provider } = CreateContextApi;
 
 const FunctionUser = ({ children }) => {
     let [count, setCount] = useState(0),
-    user = "Function User", minCount = 0, maxCount = 10, item = "Counter",
+    // user = "Function User", 
+    minCount = 0, maxCount = 10, item = "Counter",
 
     handleDecrement = () => {
         if (count > minCount) {

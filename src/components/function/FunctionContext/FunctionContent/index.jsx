@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { CiCircleMinus, CiCirclePlus, CiPower } from "react-icons/ci";
 import { CreateContextApi } from '../FunctionContextApi';
+import ReactTooltip from 'react-tooltip';
 
 const FunctionContent = () => {
     const context = useContext(CreateContextApi);
@@ -14,9 +15,12 @@ const FunctionContent = () => {
             <h1 className='pro-head count-head'> Function Counter Applications </h1>
             <h1 className='pro-head count-head'> {context.count} </h1>
             <div className="btn-div">
-                <CiCircleMinus className="ecomm-btn dec-btn" onClick={context.handleDecrement} />
-                <CiPower className="ecomm-btn reset-btn" onClick={context.handleReset} />
-                <CiCirclePlus className="ecomm-btn inc-btn" onClick={context.handleIncrement} />
+                <CiCircleMinus className="pro-btn dec-btn" onClick={context.handleDecrement} data-tip data-for="dereaseCount" />
+                <ReactTooltip id="dereaseCount" place="bottom" effect="solid"> Decrease the Counter </ReactTooltip>
+                <CiPower className="pro-btn reset-btn" onClick={context.handleReset} data-tip data-for="resetCount" />
+                <ReactTooltip id="resetCount" place="bottom" effect="solid"> Reset the Counter </ReactTooltip>
+                <CiCirclePlus className="pro-btn inc-btn" onClick={context.handleIncrement} data-tip data-for="increaseCount" />
+                <ReactTooltip id="increaseCount" place="bottom" effect="solid"> Increase the Counter </ReactTooltip>
             </div>
         </div>
     );

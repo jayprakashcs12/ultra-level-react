@@ -69,3 +69,48 @@
     display: block;
 }
 
+nav, footer {
+    background-color: var(--color16);
+}
+
+.navbar, .nav-links, .nav-menu  {
+    display: flex;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+.nav-menu {
+    justify-content: center;
+}
+
+.navbar, .nav-links {
+    align-items: center;
+}
+
+.navbar, .foot-div {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.navbar-logo {
+    width: 65px;
+}
+
+.nav-links {
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.menu-icon, .nav-links, .subnav-links {
+    color: var(--color06);
+}
+
+.nav-links, .subnav-links {
+    text-decoration: none;
+    padding: 10px;
+    height: 35px;
+}

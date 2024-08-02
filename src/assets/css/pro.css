@@ -1,17 +1,86 @@
-.web-div {
-    background-image: url("../img/background/bg-img.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.6;
-}
-
 .pro-div {
+    background-color: #ffffff2f;
     border-radius: 20px 0 0 20px;
     max-height: 360px;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 1% 2%;
+    padding: 1%;
+}
+
+.parent-div, .product-div, .img-preview, .btn-div {
+    display: flex;
+}
+
+.btn-div {
+    justify-content: space-evenly;
+}
+
+.btn-div {
+    align-items: center;
+}
+
+.btn-div {
+    max-width: 400px;
+    margin: 1% auto;
+}
+
+.pro-div, .btn-upload-div {
     margin: 1% 0;
+}
+
+.pro-btn {
+    cursor: pointer;
+    font-size: 38px;
+}
+
+.dec-btn {
+    color: var(--color04);
+}
+
+.inc-btn, .upload-btn {
+    color: var(--color02);
+}
+
+.reset-btn {
+    color: var(--color21);
+}
+
+.student-list-div {
+    background-color: var(--color06);
+    border: 1px solid var(--color15);
+    border-radius: 8px;
+    height: 235px;
+    width: 240px;
+    margin: 16px;
+}
+
+.student-list-div, .pro-head {
+    text-align: center;
+}
+
+.pro-head, .pro-para {
+    color: var(--color06);
+}
+
+.main-div {
+    margin-left: 5px;
+}
+
+.pro-head {
+    margin-bottom: 1%;
+}
+
+.app-div, .foot-div {
+    padding: 1% 0;
+}
+
+.pro-input {
+    border-radius: 12px;
+}
+
+.btn-upload-div {
+    max-width: 500px;
+    margin: 1% auto;
 }
 
 .counter-apps {
@@ -19,72 +88,16 @@
 }
 
 .img-upload, .pro-img {
-    border-radius: 20px;  
+    border-radius: 50%;  
     height: 150px;
     width: 150px;
-}
-
-.img-upload {
-    margin: 20px 0 20px 20px;
 }
 
 .pro-img {
     margin: 10px;
 }
 
-/* Scrollbar Here */
-
-/* Style the scrollbar container */
-.pro-div::-webkit-scrollbar {
-    width: 5px; /* Width of the scrollbar */
+.multi-img-div {
+    text-align: center;
+    padding-top: 1%;
 }
-
-/* Style the scrollbar track */
-.pro-div::-webkit-scrollbar-track {
-    background-color: var(--color09); /* Track background color */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Style the scrollbar thumb */
-.pro-div::-webkit-scrollbar-thumb {
-    background-color: var(--color14);
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* Style the scrollbar thumb on hover */
-.pro-div::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color04);
-}
-
-/* Scrollbar Here */
-
-/* Contact Us Background Color  */
-.contact-div {
-    background-color: var(--color05);
-}
-/* Contact Us Background Color  */
-
-/* Context API Background Color  */
-.context-div {
-    background-color: var(--color20);
-}
-/* Context API Background Color  */
-
-/* Home Background Color  */
-.home-div {
-    background-color: var(--color02);
-}
-/* Home Background Color  */
-
-/* Image Upload Background Color  */
-.img-upload-div {
-    background-color: var(--color05);
-}
-/* Image Upload Background Color  */
-
-/* Students List Background Color  */
-.students-div {
-    background-color: var(--color12);
-}
-/* Students List Background Color  */
