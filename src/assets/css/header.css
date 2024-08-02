@@ -1,0 +1,71 @@
+.navbar {
+    height: 80px;
+}
+
+.pro-icon {
+    margin: 10px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+}
+
+.nav-menu {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-item {
+    height: 35px;
+}
+
+.nav-links {
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.nav-links:hover, .subnav-links:hover {
+    font-weight: 500;
+}
+
+.subnav-links:hover {
+    padding: 10px 0;
+}
+
+.nav-links:hover, .subnav-links:hover {
+    padding: 10px;
+}
+
+.nav-links:hover, .subnav-links:hover, .nav-links.active, .subnav-links.active {
+    border-radius: 10px 25px;
+}
+
+.nav-links.active, .subnav-links.active, .nav-links:hover, .subnav-links:hover {
+    background-color: var(--color08);
+    text-decoration: none;
+    color: var(--color06);
+    font-weight: 500;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--color12);
+    list-style: none;
+    padding: 10px 20px;
+    z-index: 9999;
+}
+
+.submenu-item {
+    padding: 10px 0;
+}
+
+.subnav-links {
+    padding: 5% 0;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+

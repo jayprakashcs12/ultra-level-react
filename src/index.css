@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --cardWidth: 240px;
+    --cardHeight: 235px;
+    --cardMargin: 16px;
+    --color00: transparent;
+    --color01: rgb(0, 0, 0);
+    --color02: rgb(0, 0, 255);
+    --color03: rgb(0, 255, 0);
+    --color04: rgb(255, 0, 0);
+    --color05: rgb(255, 255, 0);
+    --color06: rgb(255, 255, 255);
+    --color07: rgba(255, 255, 255, 0.2);
+    --color08: #0089ff;
+    --color09: #f000bf;
+    --color10: #575757;
+    --color11: #4a1414;
+    --color12: #333333;
+    --color13: #115f64;
+    --color14: #e91e63;
+    --color15: #bbbbbb;
+    --color16: #232532;
+    --color17: #24262b;
+    --color18: green;
+    --color19: #e0e0e0;
+    --color20: #12aab4;
 }
+
+@import url("../src/assets/css/ecommerce.css");
+@import url("../src/assets/css/footer.css");
+@import url("../src/assets/css/header.css");
+@import url("../src/assets/css/media.css");
+@import url("../src/assets/css/pro.css");
+
+.pro-toast {
+    min-width: max-content;
+}
+
+nav, footer {
+    background-color: var(--color16);
+}
+
+.navbar, .app-div, .foot-div {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.navbar, .nav-menu, .nav-links, .parent-div, .product-div {
+    display: flex;
+}
+
+.parent-div {
+    justify-content: space-evenly;
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+.product-div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.student-list-div {
+    background-color: var(--color06);
+    border: 1px solid var(--color15);
+    width: var(--cardWidth);
+    height: var(--cardHeight);
+    margin: var(--cardMargin);
+    border-radius: 8px;
+}
+
+.student-list-div, .pro-head {
+    text-align: center;
+}
+
+.navbar, .nav-links {
+    align-items: center;
+}
+
+.navbar-logo {
+    width: 65px;
+}
+
+.nav-links, .ecomm-btn, .act-btn, .pro-btn, .add-btn {
+    cursor: pointer;
+}
+
+.nav-links {
+    font-size: 14px;
+}
+
+.menu-icon, .nav-links, .subnav-links, .pro-head {
+    color: var(--color06);
+}
+
+.app-div, .foot-div {
+    padding: 1% 0;
+}
+
+.nav-links, .subnav-links {
+    text-decoration: none;
+    padding: 10px;
+    height: 35px;
+}
+
+.app-div {
+    height: 59.7vh;
+}
+
+.ecomm-btn {
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.dec-btn {
+    color: var(--color04);
+}
+
+.inc-btn {
+    color: var(--color18);
+}
+
+.reset-btn {
+    color: var(--color11);
+}
+
+.pro-input, .pro-btn, .act-btn {
+    border-radius: 12px;
+}
+
+/* .counter-apps, .view-products, .pro-state {
+    background-color: var(--color20);
+} */

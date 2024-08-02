@@ -1,0 +1,90 @@
+.web-div {
+    background-image: url("../img/background/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+}
+
+.pro-div {
+    border-radius: 20px 0 0 20px;
+    max-height: 360px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 1% 2%;
+    margin: 1% 0;
+}
+
+.counter-apps {
+    text-align: center;
+}
+
+.img-upload, .pro-img {
+    border-radius: 20px;  
+    height: 150px;
+    width: 150px;
+}
+
+.img-upload {
+    margin: 20px 0 20px 20px;
+}
+
+.pro-img {
+    margin: 10px;
+}
+
+/* Scrollbar Here */
+
+/* Style the scrollbar container */
+.pro-div::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+/* Style the scrollbar track */
+.pro-div::-webkit-scrollbar-track {
+    background-color: var(--color09); /* Track background color */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Style the scrollbar thumb */
+.pro-div::-webkit-scrollbar-thumb {
+    background-color: var(--color14);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Style the scrollbar thumb on hover */
+.pro-div::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color04);
+}
+
+/* Scrollbar Here */
+
+/* Contact Us Background Color  */
+.contact-div {
+    background-color: var(--color05);
+}
+/* Contact Us Background Color  */
+
+/* Context API Background Color  */
+.context-div {
+    background-color: var(--color20);
+}
+/* Context API Background Color  */
+
+/* Home Background Color  */
+.home-div {
+    background-color: var(--color02);
+}
+/* Home Background Color  */
+
+/* Image Upload Background Color  */
+.img-upload-div {
+    background-color: var(--color05);
+}
+/* Image Upload Background Color  */
+
+/* Students List Background Color  */
+.students-div {
+    background-color: var(--color12);
+}
+/* Students List Background Color  */

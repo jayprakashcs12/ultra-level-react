@@ -1,0 +1,71 @@
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .pro-icon {
+        margin: 5px 0 -2px 5px;
+    }
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .app-div, .foot-div {
+        padding: 5% !important;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 80px);
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.1s ease;
+        background: #333;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        z-index: 999;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .navbar-logo {
+        width: 50px !important;
+    }
+
+    .nav-links:hover {
+        border-radius: 0;
+    }
+
+    .submenu {
+        position: relative;
+        z-index: 9999;
+        margin: 0;
+    }
+
+    .submenu-item {
+        padding: 5px 0;
+        margin: 0;
+    }
+
+    .submenu-item a {
+        padding: 5px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
