@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import empData from "../../../server/data-base.json";
 
 const FunctionStudents = () => {
+
+    useEffect(() => {
+        document.title = "Function Students Lists";
+    }, []);
     
     let [userData] = useState(empData);
 

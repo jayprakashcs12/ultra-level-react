@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 export const CreateContextApi = createContext();
 
-const { Provider } = CreateContextApi;
+let { Provider } = CreateContextApi;
 
 const FunctionUser = ({ children }) => {
     let [count, setCount] = useState(0),

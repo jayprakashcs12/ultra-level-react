@@ -1,10 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axiosInstance from '../../helpers/axiosInstance';
 
 const FunctionImgUpload = () => {
+
+    useEffect(() => {
+        document.title = "Function Image Upload";
+    }, []);
 
     let [selectedFiles, setSelectedFiles] = useState([]),
         [imagePreviews, setImagePreviews] = useState([]),

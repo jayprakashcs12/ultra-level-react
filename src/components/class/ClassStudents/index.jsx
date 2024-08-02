@@ -9,7 +9,7 @@ export default class ClassStudents extends Component {
     }
 
     componentDidMount() {
-        document.title = "Class Students List";
+        document.title = "Class Students Lists";
     }
 
     render() {
