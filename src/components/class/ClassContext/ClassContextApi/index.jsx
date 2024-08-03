@@ -43,9 +43,12 @@ export default class ClassUser extends Component {
         let { count } = this.state, { handleIncrement, handleDecrement, handleReset } = this;
 
         return (
-            <Provider value={{ count, handleIncrement, handleDecrement, handleReset }}>
-                {this.props.children}
-            </Provider>
+            <>
+                <h1 className='pro-head'> Class Counter Applications </h1>
+                <Provider value={{ count, handleIncrement, handleDecrement, handleReset }}>
+                    {this.props.children}
+                </Provider>
+            </>
         );
     }
 }

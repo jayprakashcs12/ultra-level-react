@@ -10,18 +10,20 @@ const FunctionStudents = () => {
     let [userData] = useState(empData);
 
     return (
-        <div className="pro-div students-div">
+        <>
             <h1 className='pro-head'>Function Students Details</h1>
-            <div className="product-div">
-                {userData.map((x, i) => (
-                    <div key={i} className='student-list-div'>
-                        <p className='student-para'> {x.id} </p>
-                        <img className='pro-img' src={x.avatar_url} alt={x.avatar_url} />
-                        <p className='student-para'> <b> {x.login} </b> </p>
-                    </div>
-                ))}
+            <div className="pro-div students-div">
+                <div className="product-div">
+                    {userData.map((x, i) => (
+                        <div key={i} className='student-list-div'>
+                            <p className='student-para'> {x.id} </p>
+                            <img className='pro-img' src={x.avatar_url} alt={x.avatar_url} />
+                            <p className='student-para'> <b> {x.login} </b> </p>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

@@ -18,7 +18,6 @@ export default class ClassContent extends Component {
                     {
                         (val) => (
                             <div className='counter-apps'>
-                                <h1 className='pro-head'> Class Counter Applications </h1>
                                 <h1 className='pro-head count-head'>{val.count}</h1>
                                 <div className="btn-div">
                                     <CiCircleMinus className="pro-btn dec-btn" onClick={val.handleDecrement} data-tip data-for="dereaseCount" />

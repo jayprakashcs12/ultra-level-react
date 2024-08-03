@@ -68,25 +68,27 @@ class ClassImgUpload extends Component {
         let { imagePreviews } = this.state;
 
         return (
-            <div className='pro-div img-upload-div'>
+            <>
                 <h1 className='pro-head'> Class Image Upload </h1>
-                <div className="main-div multi-img-div">
-                    {imagePreviews && imagePreviews.length > 0 && (
-                        <div className="img-preview">
-                            {imagePreviews.map((img, i) => (
-                                <img key={i} src={img} alt={`Preview ${i}`} className='img-upload' />
-                            ))}
-                        </div>
-                    )}
-                    <input type="file" multiple onChange={this.handleFileChange} ref={this.fileInputRef} />
+                <div className='pro-div img-upload-div'>
+                    <div className="main-div multi-img-div">
+                        {imagePreviews && imagePreviews.length > 0 && (
+                            <div className="img-preview">
+                                {imagePreviews.map((img, i) => (
+                                    <img key={i} src={img} alt={`Preview ${i}`} className='img-upload' />
+                                ))}
+                            </div>
+                        )}
+                        <input type="file" multiple onChange={this.handleFileChange} ref={this.fileInputRef} />
+                    </div>
+                    <div className="btn-div">
+                        <CiPower className='pro-btn reset-btn' onClick={this.handleClear} data-tip data-for="resetImage" />
+                        <ReactTooltip id="resetImage" place="bottom" effect="solid"> Reset the Image Upload </ReactTooltip>
+                        <MdAttachFile className='pro-btn upload-btn' onClick={this.handleUpload} data-tip data-for="uploadImage" />
+                        <ReactTooltip id="uploadImage" place="bottom" effect="solid"> Select Image to Upload </ReactTooltip>
+                    </div>
                 </div>
-                <div className="btn-div">
-                    <CiPower className='pro-btn reset-btn' onClick={this.handleClear} data-tip data-for="resetImage" />
-                    <ReactTooltip id="resetImage" place="bottom" effect="solid"> Reset the Image Upload </ReactTooltip>
-                    <MdAttachFile className='pro-btn upload-btn' onClick={this.handleUpload} data-tip data-for="uploadImage" />
-                    <ReactTooltip id="uploadImage" place="bottom" effect="solid"> Select Image to Upload </ReactTooltip>
-                </div>
-            </div>
+            </>
         );
     }
 }

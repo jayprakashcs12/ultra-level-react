@@ -1,7 +1,7 @@
 .pro-div {
-    background-color: #ffffff2f;
+    background-color: var(--color050);
     border-radius: 20px 0 0 20px;
-    max-height: 360px;
+    max-height: 320px;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 1%;
@@ -24,37 +24,33 @@
     margin: 1% auto;
 }
 
-.pro-div, .btn-upload-div {
-    margin: 1% 0;
-}
-
 .pro-btn {
     cursor: pointer;
     font-size: 38px;
 }
 
 .dec-btn {
-    color: var(--color04);
+    color: var(--color038);
 }
 
 .inc-btn, .upload-btn {
-    color: var(--color02);
+    color: var(--color019);
 }
 
 .reset-btn {
-    color: var(--color21);
+    color: var(--color039);
 }
 
 .student-list-div {
-    background-color: var(--color06);
-    border: 1px solid var(--color15);
+    background-color: var(--color08);
     border-radius: 8px;
-    height: 235px;
-    width: 240px;
-    margin: 16px;
+    height: 225px;
+    width: 225px;
+    margin: 10px;
+    padding: 5px;
 }
 
-.student-list-div, .pro-head {
+.student-list-div {
     text-align: center;
 }
 
@@ -67,7 +63,7 @@
 }
 
 .pro-head {
-    margin-bottom: 1%;
+    margin-bottom: 0.5%;
 }
 
 .app-div, .foot-div {
@@ -78,19 +74,14 @@
     border-radius: 12px;
 }
 
-.btn-upload-div {
-    max-width: 500px;
-    margin: 1% auto;
-}
-
 .counter-apps {
     text-align: center;
 }
 
 .img-upload, .pro-img {
     border-radius: 50%;  
-    height: 150px;
-    width: 150px;
+    height: 135px;
+    width: 135px;
 }
 
 .pro-img {

@@ -34,9 +34,12 @@ const FunctionUser = ({ children }) => {
     };
 
     return (
-        <Provider value={{ count, handleIncrement, handleDecrement, handleReset }}>
-            {children}
-        </Provider>
+        <>
+            <h1 className='pro-head count-head'> Function Counter Applications </h1>
+            <Provider value={{ count, handleIncrement, handleDecrement, handleReset }}>
+                {children}
+            </Provider>
+        </>
     );
 };
 
