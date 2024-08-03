@@ -1,0 +1,122 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.not-found {
+    position: relative;
+    height: 100vh;
+}
+
+.notfound-bg,  .notfound-bg:after, .notfound {
+    width: 100%;
+}
+
+.notfound-bg, .notfound-bg:after {
+    height: 100%;
+}
+
+.notfound-bg {
+    background-image: url('../img/background/404-bg.jpg');
+    background-size: cover;
+    position: absolute;
+}
+
+.notfound-bg:after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 0, 36, 0.7);
+}
+
+.notfound {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    position: absolute;
+    line-height: 1.4;
+    max-width: 910px;
+    left: 50%;
+    top: 50%;
+}
+
+.notfound-404 {
+    position: relative;
+    height: 200px;
+}
+
+.pnf-main-head {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 220px;
+    font-weight: 900;
+    margin: 0px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.pnf-sub-head {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.home-link {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    padding: 13px 25px;
+    font-size: 18px;
+    border-radius: 40px;
+    margin: 7px;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.home-link:hover {
+    opacity: 0.9;
+}
+
+.home-link {
+    color: rgba(255, 0, 36, 0.7);
+    background: #ffffff;
+}
+
+@media only screen and (max-width: 767px) {
+    .pnf-main-head {
+        font-size: 182px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .notfound-404 {
+        height: 146px;
+    }
+
+    .pnf-main-head {
+        font-size: 146px;
+    }
+
+    .pnf-sub-head {
+        font-size: 16px;
+    }
+}

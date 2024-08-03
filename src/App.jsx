@@ -24,6 +24,7 @@ import FunctionImgUpload from './components/function/FunctionImgUpload';
 // import FunctionProps from './components/function/FunctionProps';
 // import FunctionPropsDrilling from './components/function/FunctionPropsDrilling';
 import FunctionStudents from './components/function/FunctionStudents';
+import PageNotFound from './components/apps_page/PageNotFound';
 // import FunctionUserForm from './components/function/FunctionUserForm';
 // import FunctionViewProducts from './components/function/FunctionViewProducts';
 
@@ -139,6 +140,10 @@ let router = createBrowserRouter([
             //     element: <FunctionUpdateProduct />
             // },
         ]
+    },
+    {
+        path: "*",
+        element: <PageNotFound />
     }
 ]);
 

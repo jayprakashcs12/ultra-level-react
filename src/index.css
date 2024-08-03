@@ -1,4 +1,4 @@
-* {
+*, *:after, *:before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,29 +6,91 @@
 }
 
 :root {
-    --color00: transparent;
-    --color01: rgb(0, 0, 0);
-    --color02: rgb(0, 0, 255);
-    --color03: rgb(0, 255, 0);
-    --color04: rgb(255, 0, 0);
-    --color05: rgb(255, 255, 0);
-    --color06: rgb(255, 255, 255);
-    --color07: rgba(255, 255, 255, 0.2);
-    --color08: #0089ff;
-    --color09: #f000bf;
-    --color10: #575757;
-    --color11: #4a1414;
-    --color12: #333333;
-    --color13: #115f64;
-    --color14: #e91e63;
-    --color15: #bbbbbb;
-    --color16: #232532;
-    --color17: #24262b;
-    --color19: #e0e0e0;
-    --color20: #12aab4;
-    --color21: #8b0000;
+    /* Predefind RGB Color Here */
+    --color000: rgba(0, 0, 0, 0.1);
+    --color001: rgba(0, 0, 0, 0.2);
+    --color002: rgba(0, 0, 0, 0.3);
+    --color003: rgba(0, 0, 0, 0.4);
+    --color004: rgba(0, 0, 0, 0.5);
+    --color005: rgba(0, 0, 0, 0.6);
+    --color006: rgba(0, 0, 0, 0.7);
+    --color007: rgba(0, 0, 0, 0.8);
+    --color008: rgba(0, 0, 0, 0.9);
+    --color009: rgba(0, 0, 0, 1.0);
+    --color010: rgba(0, 0, 255, 0.1);
+    --color011: rgba(0, 0, 255, 0.2);
+    --color012: rgba(0, 0, 255, 0.3);
+    --color013: rgba(0, 0, 255, 0.4);
+    --color014: rgba(0, 0, 255, 0.5);
+    --color015: rgba(0, 0, 255, 0.6);
+    --color016: rgba(0, 0, 255, 0.7);
+    --color017: rgba(0, 0, 255, 0.8);
+    --color018: rgba(0, 0, 255, 0.9);
+    --color019: rgba(0, 0, 255, 1.0);
+    --color020: rgba(0, 255, 0, 0.1);
+    --color021: rgba(0, 255, 0, 0.2);
+    --color022: rgba(0, 255, 0, 0.3);
+    --color023: rgba(0, 255, 0, 0.4);
+    --color024: rgba(0, 255, 0, 0.5);
+    --color025: rgba(0, 255, 0, 0.6);
+    --color026: rgba(0, 255, 0, 0.7);
+    --color027: rgba(0, 255, 0, 0.8);
+    --color028: rgba(0, 255, 0, 0.9);
+    --color029: rgba(0, 255, 0, 1.0);
+    --color030: rgba(255, 0, 0, 0.1);
+    --color031: rgba(255, 0, 0, 0.2);
+    --color032: rgba(255, 0, 0, 0.3);
+    --color033: rgba(255, 0, 0, 0.4);
+    --color034: rgba(255, 0, 0, 0.5);
+    --color035: rgba(255, 0, 0, 0.6);
+    --color036: rgba(255, 0, 0, 0.7);
+    --color037: rgba(255, 0, 0, 0.8);
+    --color038: rgba(255, 0, 0, 0.9);
+    --color039: rgba(255, 0, 0, 1.0);
+    --color040: rgba(255, 255, 0, 0.1);
+    --color041: rgba(255, 255, 0, 0.2);
+    --color042: rgba(255, 255, 0, 0.3);
+    --color043: rgba(255, 255, 0, 0.4);
+    --color044: rgba(255, 255, 0, 0.5);
+    --color045: rgba(255, 255, 0, 0.6);
+    --color046: rgba(255, 255, 0, 0.7);
+    --color047: rgba(255, 255, 0, 0.8);
+    --color048: rgba(255, 255, 0, 0.9);
+    --color049: rgba(255, 255, 0, 1.0);
+    --color050: rgba(255, 255, 255, 0.1);
+    --color051: rgba(255, 255, 255, 0.2);
+    --color052: rgba(255, 255, 255, 0.3);
+    --color053: rgba(255, 255, 255, 0.4);
+    --color054: rgba(255, 255, 255, 0.5);
+    --color055: rgba(255, 255, 255, 0.6);
+    --color056: rgba(255, 255, 255, 0.7);
+    --color057: rgba(255, 255, 255, 0.8);
+    --color058: rgba(255, 255, 255, 0.9);
+    --color059: rgba(255, 255, 255, 1.0);
+    /* Predefind RGB Color Here */
+
+    --color01: rgb(35, 37, 50);
+    --color02: #0089ff;
+    --color03: rgb(51, 51, 51);
+    --color04: #f000bf;;
+    --color05: #575757;;
+    --color06: #12aab4;;
+    --color07: #115f64;;
+    --color0: ;
+    --color0: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
+    --color1: ;
 }
 
+@import url("../src/assets/css/not-found.css");
 @import url("../src/assets/css/footer.css");
 @import url("../src/assets/css/header.css");
 @import url("../src/assets/css/media.css");
@@ -43,19 +105,19 @@
 
 /* Style the scrollbar track */
 .pro-div::-webkit-scrollbar-track {
-    background-color: var(--color09); /* Track background color */
+    background-color: var(--color035); /* Track background color */
     border-radius: 10px; /* Rounded corners */
 }
 
 /* Style the scrollbar thumb */
 .pro-div::-webkit-scrollbar-thumb {
-    background-color: var(--color14);
+    background-color: var(--color07);
     border-radius: 10px;
 }
 
 /* Style the scrollbar thumb on hover */
 .pro-div::-webkit-scrollbar-thumb:hover {
-    background-color: var(--color04);
+    background-color: var(--color01);
 }
 
 /* Scrollbar Here */
@@ -64,7 +126,9 @@
     min-width: max-content;
 }
 
-.parent-div, .product-div, .img-preview {
+.parent-div,
+.product-div,
+.img-preview {
     justify-content: space-evenly;
 }
 
@@ -73,7 +137,7 @@
 }
 
 .app-div {
-    max-width: 1440px;
+    max-width: 1320px;
     margin: 0 auto;
 }
 
