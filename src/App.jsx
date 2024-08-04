@@ -10,7 +10,7 @@ import Home from './components/apps_page/Home';
 import ClassContext from './components/class/ClassContext';
 // import ClassHOC from './components/class/ClassHOC';
 import ClassImgUpload from './components/class/ClassImgUpload';
-// import ClassProps from './components/class/ClassProps';
+import ClassProps from './components/class/ClassProps';
 // import ClassPropsDrilling from './components/class/ClassPropsDrilling';
 import ClassStudents from './components/class/ClassStudents';
 // import ClassUserForm from './components/class/ClassUserForm';
@@ -21,7 +21,7 @@ import Contact from './components/apps_page/Contact';
 import FunctionContext from './components/function/FunctionContext';
 // import FunctionHOC from './components/function/FunctionHOC';
 import FunctionImgUpload from './components/function/FunctionImgUpload';
-// import FunctionProps from './components/function/FunctionProps';
+import FunctionProps from './components/function/FunctionProps';
 // import FunctionPropsDrilling from './components/function/FunctionPropsDrilling';
 import FunctionStudents from './components/function/FunctionStudents';
 import PageNotFound from './components/apps_page/PageNotFound';
@@ -71,10 +71,10 @@ let router = createBrowserRouter([
                 path: "class-image-upload",
                 element: <ClassImgUpload />
             },
-            // {
-            //     path: "class-props",
-            //     element: <ClassProps />
-            // },
+            {
+                path: "class-props",
+                element: <ClassProps />
+            },
             // {
             //     path: "class-props-drilling",
             //     element: <ClassPropsDrilling />
@@ -115,10 +115,10 @@ let router = createBrowserRouter([
                 path: "function-image-upload",
                 element: <FunctionImgUpload />
             },
-            // {
-            //     path: "function-props",
-            //     element: <FunctionProps />
-            // },
+            {
+                path: "function-props",
+                element: <FunctionProps />
+            },
             // {
             //     path: "function-props-drilling",
             //     element: <FunctionPropsDrilling />

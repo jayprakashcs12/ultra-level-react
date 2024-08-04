@@ -13,7 +13,7 @@ const FunctionStudents = () => {
         <>
             <h1 className='pro-head'>Function Students Details</h1>
             <div className="pro-div students-div">
-                <div className="product-div">
+                <div className="products-div">
                     {userData.map((x, i) => (
                         <div key={i} className='student-list-div'>
                             <p className='student-para'> {x.id} </p>

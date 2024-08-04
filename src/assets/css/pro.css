@@ -7,12 +7,31 @@
     padding: 1%;
 }
 
-.parent-div, .product-div, .img-preview, .btn-div {
+.parent-div, .eshop-div, .img-preview, .btn-div, .products-div {
     display: flex;
 }
 
-.btn-div {
+.parent-div, .img-preview, .btn-div, .products-div {
     justify-content: space-evenly;
+}
+
+.eshop-div {
+    background-color: var(--color10);
+    align-items: center;
+    flex-direction: column;
+    color: var(--color059);
+    border-radius: 20px;
+    text-align: center;
+    padding: 1% 2%;
+    gap: 10px;
+}
+
+.products-div {
+    flex-wrap:wrap;
+}
+
+.payments-div {
+    background-color: var(--color04);
 }
 
 .btn-div {
@@ -24,8 +43,11 @@
     margin: 1% auto;
 }
 
-.pro-btn {
+.pro-div::-webkit-scrollbar-thumb, .pro-btn {
     cursor: pointer;
+}
+
+.pro-btn {
     font-size: 38px;
 }
 
@@ -44,13 +66,13 @@
 .student-list-div {
     background-color: var(--color08);
     border-radius: 8px;
-    height: 225px;
-    width: 225px;
-    margin: 10px;
+    margin-top: 15px;
+    height: 200px;
+    width: 200px;
     padding: 5px;
 }
 
-.student-list-div {
+.counter-apps, .student-list-div, .multi-img-div {
     text-align: center;
 }
 
@@ -66,6 +88,10 @@
     margin-bottom: 0.5%;
 }
 
+.sub-head {
+    font-size: 1.8rem;
+}
+
 .app-div, .foot-div {
     padding: 1% 0;
 }
@@ -74,12 +100,13 @@
     border-radius: 12px;
 }
 
-.counter-apps {
-    text-align: center;
-}
-
 .img-upload, .pro-img {
     border-radius: 50%;  
+    height: 100px;
+    width: 100px;
+}
+
+.product-img {
     height: 135px;
     width: 135px;
 }
@@ -89,6 +116,5 @@
 }
 
 .multi-img-div {
-    text-align: center;
     padding-top: 1%;
 }

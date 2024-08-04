@@ -1,4 +1,4 @@
-*, *:after, *:before {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -72,14 +72,14 @@
     --color01: rgb(35, 37, 50);
     --color02: #0089ff;
     --color03: rgb(51, 51, 51);
-    --color04: #f000bf;
+    --color04: #34aadc;
     --color05: #575757;
     --color06: #12aab4;
     --color07: #115f64;
     --color08: #4cd6d8;
     --color09: #07bc0c;
-    --color1: ;
-    --color1: ;
+    --color10: rgb(0 231 255);
+    --color11: #f000bf;
     --color1: ;
     --color1: ;
     --color1: ;
@@ -126,23 +126,9 @@
     min-width: max-content;
 }
 
-.parent-div,
-.product-div,
-.img-preview {
-    justify-content: space-evenly;
-}
-
-.product-div {
-    flex-wrap: wrap;
-}
-
 .app-div {
     max-width: 1320px;
     margin: 0 auto;
-}
-
-.pro-div::-webkit-scrollbar-thumb {
-    cursor: pointer;
 }
 
 .web-div {
