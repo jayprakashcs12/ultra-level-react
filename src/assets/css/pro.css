@@ -1,7 +1,8 @@
 .pro-div {
     background-color: var(--color050);
     border-radius: 20px 0 0 20px;
-    max-height: 320px;
+    height: 340px;
+    max-height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 1%;
@@ -48,6 +49,12 @@
     margin: 1% auto;
 }
 
+.content-img {
+    border-radius:12px;
+    height:195px;
+    width:50%;
+}
+
 .pro-div::-webkit-scrollbar-thumb, .pro-btn {
     cursor: pointer;
 }
@@ -89,7 +96,7 @@
 }
 
 .app-div, .foot-div {
-    padding: 1% 0;
+    padding: 0.5% 0;
 }
 
 .pro-input {
@@ -103,7 +110,7 @@
 }
 
 .product-img {
-    height: 140px;
+    height: 125px;
     width: 150px;
 }
 
