@@ -8,7 +8,7 @@
     padding: 1%;
 }
 
-.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div {
+.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .hoc01-div, .hoc02-div {
     display: flex;
 }
 
@@ -16,15 +16,30 @@
     justify-content: space-evenly;
 }
 
-.eshop-div {
-    background-color: var(--color10);
+.eshop-div, .hoc-main {
     flex-direction: column;
     border-radius: 20px;
     padding: 1% 2%;
     gap: 5px;
 }
 
-.counter-apps, .eshop-div, .student-list-div, .multi-img-div {
+.products-div {
+    background-color: var(--color10);
+}
+
+.payments-div {
+    background-color: var(--color04);
+}
+
+.hoc01-div {
+    background-color: var(--color06);
+}
+
+.hoc02-div {
+    background-color: var(--color12);
+}
+
+.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .hoc01-div, .hoc02-div {
     text-align: center;
 }
 
@@ -32,12 +47,8 @@
     margin-top: 15px;
 }
 
-.parent-div, .products-div {
+.parent-div, .products-div, .hoc01-div, .hoc02-div {
     flex-wrap: wrap;
-}
-
-.payments-div {
-    background-color: var(--color04);
 }
 
 .eshop-div, .btn-div {

@@ -9,9 +9,9 @@ class ClassHOC02 extends Component {
 
         return (
             <>
-                <h1 className='sub-head'>
-                    {travellerName} travelled from {origin} to {destination} by {trainName}
-                </h1>
+                <div className="hoc-main hoc02-div">
+                    <h1 className='sub-head'> {travellerName} {origin} {destination} {trainName} </h1>
+                </div>
             </>
         );
     }
