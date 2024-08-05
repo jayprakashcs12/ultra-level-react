@@ -20,7 +20,7 @@ export default class ClassStudents extends Component {
                     <div className="products-div">
                         {this.state.userData.map((x, i) => (
                             <div key={i} className='student-list-div'>
-                                <p className='student-para'> {x.id} </p>
+                                <p className='student-para'> {i+1} </p>
                                 <img className='pro-img' src={x.avatar_url} alt={x.avatar_url} />
                                 <p className='student-para'> <b> {x.login} </b> </p>
                             </div>

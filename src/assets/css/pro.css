@@ -17,16 +17,21 @@
 
 .eshop-div {
     background-color: var(--color10);
-    align-items: center;
     flex-direction: column;
-    color: var(--color059);
     border-radius: 20px;
-    text-align: center;
     padding: 1% 2%;
-    gap: 10px;
+    gap: 5px;
 }
 
-.products-div {
+.counter-apps, .eshop-div, .student-list-div, .multi-img-div {
+    text-align: center;
+}
+
+.eshop-div, .student-list-div {
+    margin-top: 15px;
+}
+
+.parent-div, .products-div {
     flex-wrap:wrap;
 }
 
@@ -34,7 +39,7 @@
     background-color: var(--color04);
 }
 
-.btn-div {
+.eshop-div, .btn-div {
     align-items: center;
 }
 
@@ -66,17 +71,12 @@
 .student-list-div {
     background-color: var(--color08);
     border-radius: 8px;
-    margin-top: 15px;
     height: 200px;
     width: 200px;
     padding: 5px;
 }
 
-.counter-apps, .student-list-div, .multi-img-div {
-    text-align: center;
-}
-
-.pro-head, .pro-para {
+.eshop-div, .pro-head, .pro-para {
     color: var(--color059);
 }
 
@@ -86,10 +86,6 @@
 
 .pro-head {
     margin-bottom: 0.5%;
-}
-
-.sub-head {
-    font-size: 1.8rem;
 }
 
 .app-div, .foot-div {
@@ -107,8 +103,8 @@
 }
 
 .product-img {
-    height: 135px;
-    width: 135px;
+    height: 140px;
+    width: 150px;
 }
 
 .pro-img {
@@ -117,4 +113,13 @@
 
 .multi-img-div {
     padding-top: 1%;
+}
+
+.sub-head, .product-head {
+    font-size: 22px;
+}
+
+.product-desc {
+    font-size: 20px;
+    font-weight: 500;
 }
