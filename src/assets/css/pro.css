@@ -33,7 +33,7 @@
 }
 
 .parent-div, .products-div {
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .payments-div {
@@ -50,9 +50,9 @@
 }
 
 .content-img {
-    border-radius:12px;
-    height:195px;
-    width:50%;
+    border-radius: 12px;
+    height: 195px;
+    width: 50%;
 }
 
 .pro-div::-webkit-scrollbar-thumb, .pro-btn {
