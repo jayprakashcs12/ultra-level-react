@@ -83,14 +83,6 @@
     padding: 5px;
 }
 
-.products-div {
-    background-color: var(--color08);
-    border-radius: 8px;
-    height: 200px;
-    width: 200px;
-    padding: 5px;
-}
-
 .eshop-div, .pro-head, .pro-para, .sub-head, .product-head {
     color: var(--color059);
 }
