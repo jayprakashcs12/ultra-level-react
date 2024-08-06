@@ -1,21 +1,55 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react';
+import axiosInstance from '../../../helpers/axiosInstance';
+import { useNavigate, useParams } from 'react-router-dom';
+import { PiArrowCircleLeftThin } from "react-icons/pi";
+import ReactTooltip from 'react-tooltip';
+import { toast } from 'react-toastify';
 
-export default class FunctionViewProduct extends Component {
+const FunctionViewProduct = () => {
 
-    componentDidMount() {
-        document.title = "Function View Product";
-    }
+    let [product, setProduct] = useState({
+        pname: "",
+        pprice: "",
+        pqty: "",
+    }),
 
-    render() {
+    { id } = useParams(), navigate = useNavigate(),
 
-        return (
+    viewProducts = () => {
+        navigate("/function-view-products");
+    },
 
-            <>
-                <h1 className='pro-head'> Function View Product </h1>
-                <div className="pro-div view-products-div">
+    { pname, pprice, pqty, pdesc } = product;
 
-                </div>
-            </>
-        )
-    }
-}
+    useEffect(() => {
+        let fetchProduct = async () => {
+            try {
+                let { data } = await axiosInstance.get(`/products/${id}`);
+                setProduct(data);
+                document.title = `${data.pname}`;
+            } catch (error) {
+                toast.error("Error fetching product data", { autoclose: 750 });
+            }
+        };
+
+        fetchProduct();
+    }, [id]);
+
+    return (
+        <>
+            <div className="add-div" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <h1 className='pro-head'> Function View Product - {pname} </h1>
+                <PiArrowCircleLeftThin className="pro-btn dec-btn" onClick={viewProducts} data-tip data-for="goBack" />
+                <ReactTooltip id="goBack" place="bottom" effect="solid">Click here to go products page</ReactTooltip>
+            </div>
+            <div className="pro-div view-products-div">
+                <p>{pname}</p>
+                <p>{pprice}</p>
+                <p>{pqty}</p>
+                <p>{pdesc}</p>
+            </div>
+        </>
+    );
+};
+
+export default FunctionViewProduct;

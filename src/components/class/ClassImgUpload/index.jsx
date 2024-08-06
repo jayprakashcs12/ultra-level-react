@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import { CiPower } from "react-icons/ci";
 import { toast } from 'react-toastify';
 
-class ClassImgUpload extends Component {
+export default class ClassImgUpload extends Component {
 
     componentDidMount() {
         document.title = "Class Image Upload";
@@ -92,5 +92,3 @@ class ClassImgUpload extends Component {
         );
     }
 }
-
-export default ClassImgUpload;

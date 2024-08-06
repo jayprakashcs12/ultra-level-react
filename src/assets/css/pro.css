@@ -8,7 +8,7 @@
     padding: 1%;
 }
 
-.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .hoc01-div, .hoc02-div {
+.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .hoc01-div, .hoc02-div, .pro-row-data {
     display: flex;
 }
 
@@ -23,7 +23,7 @@
     gap: 5px;
 }
 
-.products-div {
+.class-products-div, .function-products-div {
     background-color: var(--color10);
 }
 
@@ -39,11 +39,11 @@
     background-color: var(--color12);
 }
 
-.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .hoc01-div, .hoc02-div {
+.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .hoc01-div, .hoc02-div, .product-list-div {
     text-align: center;
 }
 
-.eshop-div, .student-list-div {
+.product-list-div, .eshop-div, .student-list-div {
     margin-top: 15px;
 }
 
@@ -51,17 +51,49 @@
     flex-wrap: wrap;
 }
 
-.eshop-div, .btn-div {
+.eshop-div, .btn-div, .pro-row-data {
     align-items: center;
 }
 
+.form-group {
+    box-sizing: border-box;
+    padding-left: 10px;
+    min-width: 50%;
+    flex: 1 1 0%;
+}
+
+.pro-label {
+    display: block;
+}
+
+.product-input, .pro-label {
+    margin-bottom: 1%;
+}
+
+.pro-input, .product-input, .product-textarea, .content-img {
+    border-radius: 12px;
+}
+
+.product-input, .product-textarea {
+    border: 1px solid var(--color03);
+    outline: none;
+    padding: 10px;
+}
+
+.product-input, .product-textarea, .btn-div {
+    width: 100%;
+}
+
+.product-input {
+    height: 35px;
+}
+
 .btn-div {
-    max-width: 400px;
+    max-width: 200px;
     margin: 1% auto;
 }
 
 .content-img {
-    border-radius: 12px;
     height: 195px;
     width: 50%;
 }
@@ -86,15 +118,23 @@
     color: var(--color039);
 }
 
-.student-list-div {
-    background-color: var(--color08);
+.product-list-div, .student-list-div {
     border-radius: 8px;
-    height: 200px;
     width: 200px;
     padding: 5px;
 }
 
-.eshop-div, .pro-head, .pro-para, .sub-head, .product-head {
+.product-list-div {
+    background-color: var(--color12);
+    height: 250px;
+}
+
+.student-list-div {
+    background-color: var(--color13);
+    height: 200px;
+}
+
+.eshop-div, .pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .pro-label {
     color: var(--color059);
 }
 
@@ -108,10 +148,6 @@
 
 .app-div, .foot-div {
     padding: 0.5% 0;
-}
-
-.pro-input {
-    border-radius: 12px;
 }
 
 .img-upload, .pro-img {

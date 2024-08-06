@@ -45,7 +45,8 @@ export default class ClassProducts extends Component {
     }
 
     handleReset = () => {
-        let { minCount} = this, itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
+        let { minCount } = this, itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
+
         if (itemsReset) {
             toast.warn(`All items removed successfully...!`, { autoClose: 750 });
             this.setState({ count: minCount });
@@ -59,7 +60,7 @@ export default class ClassProducts extends Component {
         return (
             <>
                 <div className="pro-div parent-div props-div">
-                    <div className="eshop-div products-div">
+                    <div className="eshop-div class-products-div">
                         <h1 className='sub-head'>Class Products Details</h1>
                         <h2 className='product-head'> Product Name : <span className='product-desc'> {product?.pname} </span> </h2>
                         <img className='product-img' src={productImage} alt={productImage} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import empData from "../../../server/data-base.json"
+import empData from "../../../server/data-base.json";
 
 export default class ClassStudents extends Component {
 

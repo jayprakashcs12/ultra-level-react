@@ -21,7 +21,7 @@ const FunctionProducts = () => {
     },
 
     handleIncrement = () => {
-        const maxValue = count + 1;
+        let maxValue = count + 1;
         if (count < maxCount) {
             setCount(maxValue);
             toast.success(`You selected ${maxValue} ${maxValue === 1 ? item : `${item}s`}...!`, { autoClose: 750 });
@@ -31,7 +31,7 @@ const FunctionProducts = () => {
     },
 
     handleReset = () => {
-        const itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
+        let itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
         if (itemsReset) {
             toast.warn(`All items removed successfully...!`, { autoClose: 750 });
             setCount(minCount);
@@ -41,7 +41,7 @@ const FunctionProducts = () => {
     return (
         <>
             <div className="pro-div parent-div props-div">
-                <div className="eshop-div products-div">
+                <div className="eshop-div function-products-div">
                     <h1 className='sub-head'>Function Products Details</h1>
                     <h2 className='product-head'> Product Name : <span className='product-desc'> {product?.pname} </span> </h2>
                     <img className='product-img' src={productImage} alt={productImage} />

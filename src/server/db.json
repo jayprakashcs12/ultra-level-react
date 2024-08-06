@@ -3,37 +3,25 @@
   "users": [],
   "products": [
     {
-      "pname": "Sports bike",
-      "pprice": "118838",
-      "pqty": "40",
-      "id": "1"
-    },
-    {
-      "pname": "Chairs",
-      "pprice": "500000",
-      "pqty": "5",
-      "id": "2"
-    },
-    {
       "pname": "Laptop",
       "pprice": "75000",
       "pqty": "20",
       "id": "3"
     },
     {
-      "pname": "Smart-Phone",
+      "pname": "Smart Phones",
       "pprice": "30000",
       "pqty": "50",
       "id": "4"
     },
     {
-      "pname": "Table",
+      "pname": "Chair",
       "pprice": "15000",
       "pqty": "15",
       "id": "5"
     },
     {
-      "pname": "Headphones",
+      "pname": "Headphone",
       "pprice": "3500",
       "pqty": "60",
       "id": "6"
@@ -61,6 +49,18 @@
       "pprice": "60000",
       "pqty": "6",
       "id": "10"
+    },
+    {
+      "pname": "Keyboard",
+      "pprice": "500",
+      "pqty": "45",
+      "id": "bd4b"
+    },
+    {
+      "pname": "Carrom",
+      "pprice": "500",
+      "pqty": "20",
+      "id": "17af"
     }
   ]
 }
