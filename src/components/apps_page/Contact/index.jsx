@@ -11,10 +11,10 @@ const Contact = () => {
     }, []);
 
     let [contactData, setContactData] = useState({
-        fname: "", mname: "", lname: "", email: "", mobile: "", address: "", message: ""
+        fname: "", lname: "", email: "", mobile: "", message: ""
     }),
 
-    { fname, mname, lname, email, mobile, address, message } = contactData,
+    { fname, lname, email, mobile, message } = contactData,
 
     contactsData = (e) => {
         let { name, value } = e.target;
@@ -28,8 +28,8 @@ const Contact = () => {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        if (!fname || !lname || !email || !mobile || !address) {
-            toast.error("Please fill out all required fields.");
+        if (!fname || !email || !mobile) {
+            toast.error("Please fill out all required fields...!");
             return;
         }
 
@@ -39,16 +39,16 @@ const Contact = () => {
             return;
         }
         try {
-            let fullName = fname + " " + mname + " " + lname;
+            let fullName = fname + " " + lname;
             toast.success(`${fullName} submitted form successfully...!` );
-            setContactData({ fname: "", mname: "", lname: "", email: "", mobile: "", address: "", message: "" });
+            setContactData({ fname: "", lname: "", email: "", mobile: "", message: "" });
         } catch (err) {
             toast.error("Failed to submit the form. Please try again later.", err, {autoClose : 750});
         }
     },
 
     handleClear = (e) => {
-        setContactData({ fname: "", mname: "", lname: "", email: "", mobile: "", address: "", message: "" });
+        setContactData({ fname: "", lname: "", email: "", mobile: "", message: "" });
         toast.warn("Input fields cleared successfully...!", {autoClose : 750});
     };
 
@@ -67,24 +67,8 @@ const Contact = () => {
                         </div>
                         
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pname"> Middle Name </label>
-                            <input className='product-input' type="text" name='mname' value={mname} placeholder='Enter Your Middle Name'
-                                onChange={contactsData}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="pro-row-data">
-                        <div className="form-group">
                             <label className='pro-label' htmlFor="pname"> Last Name </label>
                             <input className='product-input' type="text" name='lname' value={lname} placeholder='Enter Your Last Name'
-                                onChange={contactsData}
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label className='pro-label' htmlFor="pname"> eMail ID </label>
-                            <input className='product-input' type="email" name='email' value={email} placeholder='Enter Your eMail ID'
                                 onChange={contactsData}
                             />
                         </div>
@@ -99,8 +83,8 @@ const Contact = () => {
                         </div>
 
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pname"> Location </label>
-                            <input className='product-input' type="text" name='address' value={address} placeholder='Enter Your Location'
+                            <label className='pro-label' htmlFor="pname"> eMail ID </label>
+                            <input className='product-input' type="email" name='email' value={email} placeholder='Enter Your eMail ID'
                                 onChange={contactsData}
                             />
                         </div>

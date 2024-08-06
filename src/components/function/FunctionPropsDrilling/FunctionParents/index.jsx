@@ -14,7 +14,7 @@ const FunctionParents = (props) => {
         
         <>
             <div className="eshop-div payments-div">
-                <h1 className='sub-head'>Function Payments Details</h1>
+                <h1 className='sub-head'>Function Parents Details</h1>
                 {count > 0 && paymentsData.length > 0 && (
                     <>
                         <h2 className='product-head'> Product Name : <span className='product-desc'> {product?.pname} </span> </h2>

@@ -36,6 +36,10 @@
     padding: 2.1% 0;
 }
 
+.pro-row-data {
+    margin: 1% 0;
+}
+
 .eshop-div, .hoc-main {
     flex-direction: column;
     border-radius: 20px;

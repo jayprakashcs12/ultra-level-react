@@ -42,7 +42,7 @@ const FunctionGrandParents = () => {
         <>
             <div className="pro-div parent-div props-div">
                 <div className="eshop-div function-products-div">
-                    <h1 className='sub-head'>Function Products Details</h1>
+                    <h1 className='sub-head'>Function Grand Parents Details</h1>
                     <h2 className='product-head'> Product Name : <span className='product-desc'> {product?.pname} </span> </h2>
                     <img className='product-img' src={productImage} alt={productImage} />
                     <h3 className='product-head'> Product Price : <span className='product-desc'> ₹ {product?.pprice} /- </span> </h3>
