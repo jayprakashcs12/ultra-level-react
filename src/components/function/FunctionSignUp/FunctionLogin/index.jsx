@@ -70,9 +70,9 @@ const FunctionLogin = () => {
                     />
 
                     <div className="btn-div">
-                        <CiUndo className="pro-btn reset-btn" data-tip data-for="clearLogin" onClick={handleClear} />
+                        <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearLogin" onClick={handleClear} />
                         <ReactTooltip id="clearLogin" place="bottom" effect="solid"> Clear the login fields </ReactTooltip>
-                        <PiPencilThin className="pro-btn inc-btn" data-tip data-for="doLogin" onClick={handleLogin} />
+                        <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="doLogin" onClick={handleLogin} />
                         <ReactTooltip id="doLogin" place="bottom" effect="solid"> Login to app </ReactTooltip>
                     </div>
 

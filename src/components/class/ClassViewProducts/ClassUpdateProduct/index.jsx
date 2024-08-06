@@ -77,7 +77,7 @@ class ClassUpdateProduct extends Component {
             <>
                 <div className="add-div" style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
                     <h1 className='pro-head'> Class Update Product - {pname} </h1>
-                    <PiArrowCircleLeftThin className="pro-btn dec-btn" onClick={this.viewProducts} data-tip data-for="goBack" />
+                    <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={this.viewProducts} data-tip data-for="goBack" />
                     <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go products page </ReactTooltip>
                 </div>
                 <div className="pro-div view-products-div">
@@ -122,9 +122,9 @@ class ClassUpdateProduct extends Component {
                         </div>
 
                         <div className="btn-div">
-                            <CiUndo className="pro-btn reset-btn" data-tip data-for="updateProduct" onClick={this.handleClear} />
+                            <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="updateProduct" onClick={this.handleClear} />
                             <ReactTooltip id="updateProduct" place="bottom" effect="solid"> Clear the product fields </ReactTooltip>
-                            <PiPencilThin className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={this.handleUpdate} />
+                            <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={this.handleUpdate} />
                             <ReactTooltip id="updateProduct" place="bottom" effect="solid"> Update the product </ReactTooltip>
                         </div>
                     </form>

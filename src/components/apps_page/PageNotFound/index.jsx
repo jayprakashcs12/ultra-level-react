@@ -23,7 +23,7 @@ export default function PageNotFound() {
                         <h1 className='pnf-main-head'>404</h1>
                     </div>
                     <h2 className='pnf-sub-head'>we are sorry, but the page you requested was not found</h2>
-                    <CiHome className='pro-btn home-btn' data-tip data-for="pageNotFound" onClick={goBack} />
+                    <CiHome size={35} className='pro-btn home-btn' data-tip data-for="pageNotFound" onClick={goBack} />
                     <ReactTooltip id="pageNotFound" place="right" effect="solid"> Go back </ReactTooltip>
                 </div>
             </div>

@@ -22,11 +22,11 @@ export default class ClassChildren extends Component {
                             <h3 className='product-head'> Product Desc. : <span className='product-desc'> {product?.pdesc} </span> </h3>
                             <h3 className='product-head'> {count} </h3>
                             <div className="btn-div">
-                                <CiCircleMinus className="pro-btn dec-btn" onClick={handleDecrement} data-tip data-for="dereaseCount" />
+                                <CiCircleMinus size={35} className="pro-btn dec-btn" onClick={handleDecrement} data-tip data-for="dereaseCount" />
                                 <ReactTooltip id="dereaseCount" place="bottom" effect="solid"> Decrease the Product </ReactTooltip>
-                                <CiPower className="pro-btn reset-btn" onClick={handleReset} data-tip data-for="resetCount" />
+                                <CiPower size={35} className="pro-btn reset-btn" onClick={handleReset} data-tip data-for="resetCount" />
                                 <ReactTooltip id="resetCount" place="bottom" effect="solid"> Reset the Product </ReactTooltip>
-                                <CiCirclePlus className="pro-btn inc-btn" onClick={handleIncrement} data-tip data-for="increaseCount" />
+                                <CiCirclePlus size={35} className="pro-btn inc-btn" onClick={handleIncrement} data-tip data-for="increaseCount" />
                                 <ReactTooltip id="increaseCount" place="bottom" effect="solid"> Increase the Product </ReactTooltip>
                             </div>
                         </>

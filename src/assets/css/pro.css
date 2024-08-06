@@ -71,7 +71,7 @@
     margin-top: 25px;
 }
 
-.product-list-div, .eshop-div, .student-list-div {
+.product-list-div, .eshop-div, .student-list-div, .file-upload {
     margin-top: 15px;
 }
 
@@ -140,10 +140,6 @@
 
 .pro-state {
     max-width: 992px;
-}
-
-.pro-btn {
-    font-size: 38px;
 }
 
 .dec-btn {

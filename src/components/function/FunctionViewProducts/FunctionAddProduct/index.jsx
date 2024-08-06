@@ -53,7 +53,7 @@ const FunctionAddProduct = () => {
         <>
             <div className="add-div" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <h1 className='pro-head'> Add New Product </h1>
-                <PiArrowCircleLeftThin className="pro-btn dec-btn" onClick={() => navigate("/function-view-products")} data-tip data-for="goBack" />
+                <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={() => navigate("/function-view-products")} data-tip data-for="goBack" />
                 <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go to products page </ReactTooltip>
             </div>
             <div className="pro-div view-products-div">
@@ -98,9 +98,9 @@ const FunctionAddProduct = () => {
                     </div>
 
                     <div className="btn-div">
-                        <CiUndo className="pro-btn reset-btn" data-tip data-for="clearProduct" onClick={handleClear} />
+                        <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearProduct" onClick={handleClear} />
                         <ReactTooltip id="clearProduct" place="bottom" effect="solid"> Clear the product fields </ReactTooltip>
-                        <PiPencilThin className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={handleAdd} />
+                        <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={handleAdd} />
                         <ReactTooltip id="addProduct" place="bottom" effect="solid"> Add the product </ReactTooltip>
                     </div>
                 </form>

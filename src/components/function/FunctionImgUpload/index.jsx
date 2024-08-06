@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import imgUploadImage from "../../../assets/img/background/chennai-exp-02.jpg";
 import axiosInstance from '../../helpers/axiosInstance';
-import { MdAttachFile } from "react-icons/md";
+import { PiUploadSimpleThin } from "react-icons/pi";
 import ReactTooltip from 'react-tooltip';
 import { CiPower } from "react-icons/ci";
 import { toast } from 'react-toastify';
@@ -16,8 +17,8 @@ const FunctionImgUpload = () => {
     }, []);
 
     let handleFileChange = (e) => {
-        let files = Array.from(e.target.files);
-        let previews = files.map(file => URL.createObjectURL(file));
+        let files = Array.from(e.target.files),
+        previews = files.map(file => URL.createObjectURL(file));
 
         setSelectedFiles(files);
         setImagePreviews(previews);
@@ -34,9 +35,7 @@ const FunctionImgUpload = () => {
 
         try {
             let resp = await axiosInstance.post('images', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
+                headers: { 'Content-Type': 'multipart/form-data' }
             });
             console.log('Image uploaded successfully...!', resp);
             toast.success('Image uploaded successfully...!', { autoClose: 750 });
@@ -65,12 +64,24 @@ const FunctionImgUpload = () => {
                             ))}
                         </div>
                     )}
-                    <input type="file" multiple onChange={handleFileChange} ref={fileInputRef} />
+
+                    {imagePreviews && imagePreviews.length > 0 ? (
+                        <div className="img-preview">
+                            {imagePreviews.map((img, i) => (
+                                <img key={i} src={img} alt={`Preview ${i}`} className='img-upload' />
+                            ))}
+                        </div>
+                    ) : (
+                        <>
+                            <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> <br />
+                        </>
+                    )}
+                    <input className='file-upload' type="file" multiple onChange={handleFileChange} ref={fileInputRef} />
                 </div>
                 <div className="btn-div">
-                    <CiPower className='pro-btn reset-btn' onClick={handleClear} data-tip data-for="resetImage" />
+                    <CiPower size={35} className='pro-btn reset-btn' onClick={handleClear} data-tip data-for="resetImage" />
                     <ReactTooltip id="resetImage" place="bottom" effect="solid"> Reset the Image Upload </ReactTooltip>
-                    <MdAttachFile className='pro-btn upload-btn' onClick={handleUpload} data-tip data-for="uploadImage" />
+                    <PiUploadSimpleThin size={35} className='pro-btn upload-btn' onClick={handleUpload} data-tip data-for="uploadImage" />
                     <ReactTooltip id="uploadImage" place="bottom" effect="solid"> Select Image to Upload </ReactTooltip>
                 </div>
             </div>

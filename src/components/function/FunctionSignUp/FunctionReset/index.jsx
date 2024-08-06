@@ -72,9 +72,9 @@ const FunctionReset = () => {
                     />
 
                     <div className="btn-div">
-                        <CiUndo className="pro-btn reset-btn" data-tip data-for="clearReset" onClick={handleClear} />
+                        <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearReset" onClick={handleClear} />
                         <ReactTooltip id="clearReset" place="bottom" effect="solid"> Clear the password fields </ReactTooltip>
-                        <PiPencilThin className="pro-btn inc-btn" data-tip data-for="doReset" onClick={handleSubmit} />
+                        <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="doReset" onClick={handleSubmit} />
                         <ReactTooltip id="doReset" place="bottom" effect="solid"> Reset the password </ReactTooltip>
                     </div>
 

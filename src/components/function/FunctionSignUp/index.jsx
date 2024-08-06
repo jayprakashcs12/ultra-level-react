@@ -104,9 +104,9 @@ const FunctionSignUp = () => {
                     </div>
 
                     <div className="btn-div">
-                        <CiUndo className="pro-btn reset-btn" data-tip data-for="clearSignup" onClick={handleClear} />
+                        <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearSignup" onClick={handleClear} />
                         <ReactTooltip id="clearSignup" place="bottom" effect="solid"> Clear the sign up form </ReactTooltip>
-                        <PiPencilThin className="pro-btn inc-btn" data-tip data-for="doSignup" onClick={handleSubmit} />
+                        <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="doSignup" onClick={handleSubmit} />
                         <ReactTooltip id="doSignup" place="bottom" effect="solid"> Signup the app </ReactTooltip>
                     </div>
 

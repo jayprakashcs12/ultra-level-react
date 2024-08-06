@@ -51,7 +51,7 @@ const FunctionViewProducts = () => {
         <>
             <div className="add-div view-products-btn-div">
                 <h1 className='pro-head'> Function View Products </h1>
-                <CiCirclePlus className="pro-btn dec-btn" onClick={addProduct} data-tip data-for="addProduct" />
+                <CiCirclePlus size={35} className="pro-btn dec-btn" onClick={addProduct} data-tip data-for="addProduct" />
                 <ReactTooltip id="addProduct" place="bottom" effect="solid"> Click here to add new product </ReactTooltip>
             </div>
             <div className="pro-div view-products-div">
@@ -62,14 +62,14 @@ const FunctionViewProducts = () => {
                             <p className='product-para'><b>{x.pname}</b></p>
                             <div className="btn-div">
                                 <Link className='act-btn link-btn' to={`/function-view-product/${x.id}`}> 
-                                    <PiEyeThin className="pro-btn reset-btn" data-tip data-for="viewProduct" />
+                                    <PiEyeThin size={35} className="pro-btn reset-btn" data-tip data-for="viewProduct" />
                                 </Link>
                                 <ReactTooltip id="viewProduct" place="bottom" effect="solid"> View the product </ReactTooltip>
-                                <PiTrashLight className="pro-btn inc-btn" onClick={() => handleDelete(x.id, x.pname)} 
+                                <PiTrashLight size={35} className="pro-btn inc-btn" onClick={() => handleDelete(x.id, x.pname)} 
                                     data-tip data-for="deleteProduct" />
                                 <ReactTooltip id="deleteProduct" place="bottom" effect="solid">Delete the product </ReactTooltip>
                                 <Link className='act-btn link-btn' to={`/function-update-product/${x.id}`}> 
-                                    <PiPencilThin className="pro-btn reset-btn" data-tip data-for="updateProduct" />
+                                    <PiPencilThin size={35} className="pro-btn reset-btn" data-tip data-for="updateProduct" />
                                 </Link>
                                 <ReactTooltip id="updateProduct" place="bottom" effect="solid"> Update the product </ReactTooltip>
                             </div>   

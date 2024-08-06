@@ -109,9 +109,9 @@ class ClassSignUp extends Component {
                         </div>
 
                         <div className="btn-div">
-                            <CiUndo className="pro-btn reset-btn" data-tip data-for="clearSignup" onClick={this.handleClear} />
+                            <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearSignup" onClick={this.handleClear} />
                             <ReactTooltip id="clearSignup" place="bottom" effect="solid"> Clear the sign up form </ReactTooltip>
-                            <PiPencilThin className="pro-btn inc-btn" data-tip data-for="doSignup" onClick={this.handleSubmit} />
+                            <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="doSignup" onClick={this.handleSubmit} />
                             <ReactTooltip id="doSignup" place="bottom" effect="solid"> Signup the app </ReactTooltip>
                         </div>
 
