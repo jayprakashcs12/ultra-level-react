@@ -1,8 +1,9 @@
 import React from 'react';
 import productImage from "../../../../assets/img/products/samsung-galaxy.png";
 import { CiCircleMinus, CiCirclePlus, CiPower } from 'react-icons/ci';
-import ReactTooltip from 'react-tooltip';
+import productsData from "../../../../server/data.json";
 import FunctionChildren from '../FunctionChildren';
+import ReactTooltip from 'react-tooltip';
 
 const FunctionParents = (props) => {
 
@@ -32,7 +33,8 @@ const FunctionParents = (props) => {
                     </>
                 )}
             </div>
-            <FunctionChildren />
+            <FunctionChildren paymentsData={productsData} count={count} handleDecrement={handleDecrement} 
+                handleReset={handleReset} handleIncrement={handleIncrement} />
         </>
     );
 }

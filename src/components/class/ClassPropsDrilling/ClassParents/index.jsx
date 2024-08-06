@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import productImage from "../../../../assets/img/products/samsung-galaxy.png";
 import { CiCircleMinus, CiCirclePlus, CiPower } from 'react-icons/ci';
-import ReactTooltip from 'react-tooltip';
+import productsData from "../../../../server/data.json";
 import ClassChildren from '../ClassChildren';
+import ReactTooltip from 'react-tooltip';
 
 export default class ClassParents extends Component {
 
@@ -33,7 +34,8 @@ export default class ClassParents extends Component {
                         </>
                     )}
                 </div>
-                <ClassChildren />
+                <ClassChildren paymentsData={productsData} count={count} handleDecrement={this.handleDecrement} 
+                    handleReset={this.handleReset} handleIncrement={this.handleIncrement}/>
             </>
         );
     }
