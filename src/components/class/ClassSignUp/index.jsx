@@ -6,6 +6,7 @@ import { CiUndo } from 'react-icons/ci';
 import { toast } from 'react-toastify';
 
 class ClassSignUp extends Component {
+
     constructor(props) {
         super(props);
         this.state = { fname: "", lname: "", mobile: "", email: "", password: "", r_password: "" };
@@ -17,7 +18,7 @@ class ClassSignUp extends Component {
     }
 
     signUpData = (e) => {
-        const { name, value } = e.target;
+        let { name, value } = e.target;
         this.setState({ [name]: value });
     };
 
@@ -30,20 +31,20 @@ class ClassSignUp extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const { fname, lname, email, password } = this.state;
+        let { fname, lname, email, password } = this.state;
         if (!fname || !email || !password) {
             toast.error("All fields are required...!", { autoClose: 750 });
         } else {
-            const payload = { fname, lname, email, password };
+            let payload = { fname, lname, email, password };
             console.log(payload, "Class SignUp Form");
             localStorage.setItem("userData", JSON.stringify(payload));
-            this.props.history.push("/class-login-form");
+            this.props.navigate("/class-login-form");
             toast.success(`${fname} successfully created account with eMail ID - ${email} and Password - ${password}...!`, { autoClose: 750 });
         }
     };
 
     handleLogin = () => {
-        this.props.history.push("/class-login-form");
+        this.props.navigate("/class-login-form");
         toast.info(`Login with registered eMail id with password...!`, { autoClose: 750 });
     };
 
@@ -53,7 +54,8 @@ class ClassSignUp extends Component {
     };
 
     render() {
-        const { fname, lname, mobile, email, password, r_password } = this.state;
+
+        let { fname, lname, mobile, email, password, r_password } = this.state;
 
         return (
             <>
