@@ -38,9 +38,15 @@ class ClassViewProducts extends Component {
     }
 
     async handleDelete(id, pname) {
+
+        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname} ?`);
+        if (!isConfirmed) {
+            return;
+        }
+
         try {
             await axiosInstance.delete(`/products/${id}`);
-            toast.error(`${pname} removed successfully...!`);
+            toast.error(`${pname} deleted successfully...!`);
             this.fetchData();
         } catch (err) {
             console.error("Error deleting product", err);

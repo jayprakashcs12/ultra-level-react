@@ -27,12 +27,6 @@
       "id": "6"
     },
     {
-      "pname": "Washing Machine",
-      "pprice": "25000",
-      "pqty": "10",
-      "id": "7"
-    },
-    {
       "pname": "Refrigerator",
       "pprice": "40000",
       "pqty": "8",

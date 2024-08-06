@@ -102,6 +102,11 @@
     cursor: pointer;
 }
 
+.pro-state {
+    max-width: 992px;
+    margin: 0 auto;
+}
+
 .pro-btn {
     font-size: 38px;
 }

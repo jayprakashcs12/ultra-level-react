@@ -32,9 +32,15 @@ const FunctionViewProducts = () => {
     },
 
     handleDelete = async (id, pname) => {
+
+        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname} ?`);
+        if (!isConfirmed) {
+            return;
+        }
+    
         try {
             await axiosInstance.delete(`/products/${id}`);
-            toast.error(`${pname} removed successfully...!`, {autoClose: 750});
+            toast.error(`${pname} deleted successfully...!`, { autoClose: 750 });
             fetchData();
         } catch (err) {
             console.error("Error deleting product", err);
