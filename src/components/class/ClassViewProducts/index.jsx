@@ -57,7 +57,7 @@ class ClassViewProducts extends Component {
 
         return (
             <>
-                <div className="add-div" style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                <div className="add-div view-products-btn-div">
                     <h1 className='pro-head'>Class View Products</h1>
                     <CiCirclePlus className="pro-btn dec-btn" onClick={this.addProduct} data-tip data-for="addProduct" />
                     <ReactTooltip id="addProduct" place="bottom" effect="solid"> Click here to add new product </ReactTooltip>

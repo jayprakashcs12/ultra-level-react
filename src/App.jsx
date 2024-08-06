@@ -12,9 +12,11 @@ import ClassContext from './components/class/ClassContext';
 import ClassHOC from './components/class/ClassHOC';
 import ClassImgUpload from './components/class/ClassImgUpload';
 import ClassProps from './components/class/ClassProps';
-// import ClassPropsDrilling from './components/class/ClassPropsDrilling';
+import ClassPropsDrilling from './components/class/ClassPropsDrilling';
 import ClassStudents from './components/class/ClassStudents';
-// import ClassSignUp from './components/class/ClassSignUp';
+import ClassSignUp from './components/class/ClassSignUp';
+import ClassLogin from './components/class/ClassSignUp/ClassLogin';
+import ClassReset from './components/class/ClassSignUp/ClassReset';
 import ClassViewProducts from './components/class/ClassViewProducts';
 import Contact from './components/apps_page/Contact';
 import FunctionAddProduct from './components/function/FunctionViewProducts/FunctionAddProduct';
@@ -23,7 +25,7 @@ import FunctionContext from './components/function/FunctionContext';
 import FunctionHOC from './components/function/FunctionHOC';
 import FunctionImgUpload from './components/function/FunctionImgUpload';
 import FunctionProps from './components/function/FunctionProps';
-// import FunctionPropsDrilling from './components/function/FunctionPropsDrilling';
+import FunctionPropsDrilling from './components/function/FunctionPropsDrilling';
 import FunctionStudents from './components/function/FunctionStudents';
 import FunctionSignUp from './components/function/FunctionSignUp';
 import FunctionLogin from './components/function/FunctionSignUp/FunctionLogin';
@@ -78,18 +80,26 @@ let router = createBrowserRouter([
                 path: "class-props",
                 element: <ClassProps />
             },
-            // {
-            //     path: "class-props-drilling",
-            //     element: <ClassPropsDrilling />
-            // },
+            {
+                path: "class-props-drilling",
+                element: <ClassPropsDrilling />
+            },
             {
                 path: "class-students-list",
                 element: <ClassStudents />
             },
-            // {
-            //     path: "class-user-form",
-            //     element: <ClassSignUp />
-            // },
+            {
+                path: "class-signup-form",
+                element: <ClassSignUp />
+            },
+            {
+                path: "class-login-form",
+                element: <ClassLogin />
+            },
+            {
+                path: "class-reset-form",
+                element: <ClassReset />
+            },
             {
                 path: "class-update-product/:id",
                 element: <ClassUpdateProduct />
@@ -126,10 +136,10 @@ let router = createBrowserRouter([
                 path: "function-props",
                 element: <FunctionProps />
             },
-            // {
-            //     path: "function-props-drilling",
-            //     element: <FunctionPropsDrilling />
-            // },
+            {
+                path: "function-props-drilling",
+                element: <FunctionPropsDrilling />
+            },
             {
                 path: "function-students-list",
                 element: <FunctionStudents />
