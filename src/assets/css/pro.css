@@ -8,12 +8,28 @@
     padding: 1%;
 }
 
-.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .hoc01-div, .hoc02-div, .pro-row-data {
+.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .hoc01-div, .hoc02-div, .pro-row-data, .link-div {
     display: flex;
+}
+
+.link-div {
+    justify-content: center;
 }
 
 .parent-div, .img-preview, .btn-div, .products-div, .hoc-div {
     justify-content: space-evenly;
+}
+
+.eshop-div, .btn-div, .pro-row-data {
+    align-items: center;
+}
+
+.login-up-div {
+    padding: 3.5% 0;
+}
+
+.sign-up-div {
+    padding: 2.1% 0;
 }
 
 .eshop-div, .hoc-main {
@@ -39,8 +55,12 @@
     background-color: var(--color12);
 }
 
-.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .hoc01-div, .hoc02-div, .product-list-div {
+.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .hoc01-div, .hoc02-div, .product-list-div, .alr-reg-div {
     text-align: center;
+}
+
+.alr-log-div, .remember-pass-div {
+    margin-top: 25px;
 }
 
 .product-list-div, .eshop-div, .student-list-div {
@@ -51,8 +71,8 @@
     flex-wrap: wrap;
 }
 
-.eshop-div, .btn-div, .pro-row-data {
-    align-items: center;
+.link-div {
+    gap: 35px;
 }
 
 .form-group {
@@ -102,9 +122,16 @@
     cursor: pointer;
 }
 
+.pro-login-state, .pro-state {
+    margin: 0 auto;
+}
+
+.pro-login-state {
+    max-width: 500px;
+}
+
 .pro-state {
     max-width: 992px;
-    margin: 0 auto;
 }
 
 .pro-btn {
@@ -139,7 +166,7 @@
     height: 200px;
 }
 
-.eshop-div, .pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .pro-label {
+.eshop-div, .pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .pro-label, .log-link {
     color: var(--color059);
 }
 

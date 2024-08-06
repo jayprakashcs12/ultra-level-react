@@ -101,11 +101,11 @@ const Header = () => {
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink className={({ isActive, isPending }) => isActive ? "active subnav-links" : isPending ? "pending" : "subnav-links"} 
-                                        onClick={closeMenus} to="/class-students-list"> Students List </NavLink>
+                                        onClick={closeMenus} to="/class-signup-form"> Signup Form </NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink className={({ isActive, isPending }) => isActive ? "active subnav-links" : isPending ? "pending" : "subnav-links"} 
-                                        onClick={closeMenus} to="/class-user-form"> User Form </NavLink>
+                                        onClick={closeMenus} to="/class-students-list"> Students List </NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink className={({ isActive, isPending }) => isActive ? "active subnav-links" : isPending ? "pending" : "subnav-links"} 
@@ -143,11 +143,11 @@ const Header = () => {
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink className={({ isActive, isPending }) => isActive ? "active subnav-links" : isPending ? "pending" : "subnav-links"} 
-                                        onClick={closeMenus} to="/function-students-list"> Students List </NavLink>
+                                        onClick={closeMenus} to="/function-signup-form"> Signup Form </NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink className={({ isActive, isPending }) => isActive ? "active subnav-links" : isPending ? "pending" : "subnav-links"} 
-                                        onClick={closeMenus} to="/function-user-form"> User Form </NavLink>
+                                        onClick={closeMenus} to="/function-students-list"> Students List </NavLink>
                                 </li>
                                 <li className="submenu-item">
                                     <NavLink className={({ isActive, isPending }) => isActive ? "active subnav-links" : isPending ? "pending" : "subnav-links"} 

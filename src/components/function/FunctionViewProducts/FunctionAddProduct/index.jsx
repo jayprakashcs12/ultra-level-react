@@ -12,27 +12,21 @@ const FunctionAddProduct = () => {
         document.title = "Function Add Product";
     }, []);
 
-    const [product, setProduct] = useState({
-        pname: "",
-        pimg: "",
-        pprice: "",
-        pqty: "",
-        pdesc: ""
-    });
+    let [product, setProduct] = useState({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }),
 
-    const navigate = useNavigate();
+    navigate = useNavigate(),
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
+    handleChange = (e) => {
+        let { name, value } = e.target;
         setProduct(prevProduct => ({
             ...prevProduct,
             [name]: value
         }));
-    };
+    },
 
-    const handleAdd = async (e) => {
+    handleAdd = async (e) => {
         e.preventDefault();
-        const { pname, pprice, pqty } = product;
+        let { pname, pprice, pqty } = product;
         if (!pname || !pprice || !pqty) {
             toast.error("All fields are required...!", { autoClose: 750 });
         } else {
@@ -45,15 +39,11 @@ const FunctionAddProduct = () => {
                 toast.error(err.message, { autoClose: 750 });
             }
         }
-    };
+    },
 
-    const handleClear = () => {
+    handleClear = () => {
         setProduct({
-            pname: "",
-            pprice: "",
-            pqty: "",
-            pdesc: "",
-            pimg: ""
+            pname: "", pprice: "", pqty: "", pdesc: "", pimg: ""
         });
     };
 

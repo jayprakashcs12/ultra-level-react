@@ -14,7 +14,7 @@ import ClassImgUpload from './components/class/ClassImgUpload';
 import ClassProps from './components/class/ClassProps';
 // import ClassPropsDrilling from './components/class/ClassPropsDrilling';
 import ClassStudents from './components/class/ClassStudents';
-// import ClassUserForm from './components/class/ClassUserForm';
+// import ClassSignUp from './components/class/ClassSignUp';
 import ClassViewProducts from './components/class/ClassViewProducts';
 import Contact from './components/apps_page/Contact';
 import FunctionAddProduct from './components/function/FunctionViewProducts/FunctionAddProduct';
@@ -25,11 +25,12 @@ import FunctionImgUpload from './components/function/FunctionImgUpload';
 import FunctionProps from './components/function/FunctionProps';
 // import FunctionPropsDrilling from './components/function/FunctionPropsDrilling';
 import FunctionStudents from './components/function/FunctionStudents';
-import PageNotFound from './components/apps_page/PageNotFound';
-// import FunctionUserForm from './components/function/FunctionUserForm';
+import FunctionSignUp from './components/function/FunctionSignUp';
+import FunctionLogin from './components/function/FunctionSignUp/FunctionLogin';
 import FunctionViewProducts from './components/function/FunctionViewProducts';
 import FunctionViewProduct from './components/function/FunctionViewProducts/FunctionViewProduct';
-
+import PageNotFound from './components/apps_page/PageNotFound';
+import FunctionReset from './components/function/FunctionSignUp/FunctionReset';
 
 let Layout = () => (
 
@@ -87,7 +88,7 @@ let router = createBrowserRouter([
             },
             // {
             //     path: "class-user-form",
-            //     element: <ClassUserForm />
+            //     element: <ClassSignUp />
             // },
             {
                 path: "class-update-product/:id",
@@ -133,10 +134,18 @@ let router = createBrowserRouter([
                 path: "function-students-list",
                 element: <FunctionStudents />
             },
-            // {
-            //     path: "function-user-form",
-            //     element: <FunctionUserForm />
-            // },
+            {
+                path: "function-signup-form",
+                element: <FunctionSignUp />
+            },
+            {
+                path: "function-login-form",
+                element: <FunctionLogin />
+            },
+            {
+                path: "function-reset-form",
+                element: <FunctionReset />
+            },
             {
                 path: "function-view-products",
                 element: <FunctionViewProducts />
