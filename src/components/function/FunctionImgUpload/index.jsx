@@ -57,14 +57,6 @@ const FunctionImgUpload = () => {
             <h1 className='pro-head'> Function Image Upload </h1>
             <div className='pro-div img-upload-div'>
                 <div className="main-div multi-img-div">
-                    {imagePreviews.length > 0 && (
-                        <div className="img-preview">
-                            {imagePreviews.map((img, i) => (
-                                <img key={i} src={img} alt={`Preview ${i}`} className='img-upload' />
-                            ))}
-                        </div>
-                    )}
-
                     {imagePreviews && imagePreviews.length > 0 ? (
                         <div className="img-preview">
                             {imagePreviews.map((img, i) => (
