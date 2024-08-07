@@ -50,7 +50,7 @@ const FunctionViewProducts = () => {
     return (
 
         <>
-            <div className="add-div view-products-btn-div">
+            <div className="add-div view-prod-btn-div">
                 <h1 className='pro-head'> Function View Products </h1>
                 <CiCirclePlus size={35} className="pro-btn dec-btn" onClick={addProduct} data-tip data-for="addProduct" />
                 <ReactTooltip id="addProduct" place="bottom" effect="solid"> Click here to add new product </ReactTooltip>

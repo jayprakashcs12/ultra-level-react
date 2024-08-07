@@ -50,7 +50,7 @@ const FunctionAddProduct = () => {
     return (
         
         <>
-            <div className="add-div view-products-btn-div">
+            <div className="add-div view-prod-btn-div">
                 <h1 className='pro-head'> Add New Product </h1>
                 <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={() => navigate("/function-view-products")} data-tip data-for="goBack" />
                 <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go to products page </ReactTooltip>

@@ -61,7 +61,7 @@ const FunctionUpdateProduct = () => {
     return (
         
         <>
-            <div className="add-div view-products-btn-div">
+            <div className="add-div view-prod-btn-div">
                 <h1 className='pro-head'> Function Update Product - {pname} </h1>
                 <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={viewProducts} data-tip data-for="goBack" />
                 <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go products page </ReactTooltip>
