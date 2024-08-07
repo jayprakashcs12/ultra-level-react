@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-const ClassHocMain = (Dora) => {
+const ClassHocMain = (ClassHoc) => {
 
-    let data = function() {
-        return <Dora value={{travellerName:"Rahul", trainName:"Chennai Express", origin:"Mumbai", destination:"Cumbum, Theni"}} />
-    }
+    return class extends Component {
 
-    return data;
-}
+        render() {
+            let data = { uiDeveloper: "Jay Prakash Singh", subjectName1: "HTML", subjectName2: "CSS", subjectName3: "ReactJS", subjectName4: "AngularJS" };
+            return <ClassHoc value={data} />;
+        }
+    };
+};
 
 export default ClassHocMain;

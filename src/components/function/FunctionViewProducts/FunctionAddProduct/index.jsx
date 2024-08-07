@@ -19,8 +19,7 @@ const FunctionAddProduct = () => {
     handleChange = (e) => {
         let { name, value } = e.target;
         setProduct(prevProduct => ({
-            ...prevProduct,
-            [name]: value
+            ...prevProduct, [name]: value
         }));
     },
 
@@ -30,7 +29,7 @@ const FunctionAddProduct = () => {
         if (!pname || !pprice || !pqty) {
             toast.error("All fields are required...!", { autoClose: 750 });
         } else {
-            const payload = { pname, pprice, pqty };
+            let payload = { pname, pprice, pqty };
             try {
                 await axiosInstance.post('/products', payload);
                 toast.success(`${pname} added successfully...!`, { autoClose: 750 });

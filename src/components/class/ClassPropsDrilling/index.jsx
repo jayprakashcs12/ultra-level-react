@@ -5,7 +5,7 @@ import ClassGrandParents from './ClassGrandParents';
 export default class ClassPropsDrilling extends Component {
 
     componentDidMount() {
-        document.title = "Class Props";
+        document.title = "Class Props Drilling";
     }
 
     render() {

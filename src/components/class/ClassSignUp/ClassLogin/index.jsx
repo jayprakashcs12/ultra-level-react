@@ -9,9 +9,7 @@ class ClassLogin extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            loginData: { fname: "", email: "", password: "" }
-        };
+        this.state = { loginData: { fname: "", email: "", password: "" }};
     }
 
     componentDidMount() {
@@ -46,9 +44,7 @@ class ClassLogin extends Component {
     };
 
     handleClear = () => {
-        this.setState({
-            loginData: { fname: "", email: "", password: "" }
-        });
+        this.setState({ loginData: { fname: "", email: "", password: "" } });
     };
 
     handleRegister = () => {

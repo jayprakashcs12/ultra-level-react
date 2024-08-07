@@ -24,7 +24,9 @@ export default class ClassProducts extends Component {
     }
 
     handleDecrement = () => {
+
         let { count } = this.state, { minCount, item } = this;
+
         if (count > minCount) {
             this.setState((prevState) => ({ count: prevState.count - 1 }));
             toast.info(`You selected ${count - 1} ${count - 1 < 2 ? `${item}` : `${item}s`}...!`, { autoClose: 1000 });
@@ -34,6 +36,7 @@ export default class ClassProducts extends Component {
     }
 
     handleIncrement = () => {
+        
         let { count } = this.state, { maxCount, item } = this, maxValue = count + 1;
 
         if (count < maxCount) {
@@ -45,6 +48,7 @@ export default class ClassProducts extends Component {
     }
 
     handleReset = () => {
+        
         let { minCount } = this, itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
 
         if (itemsReset) {

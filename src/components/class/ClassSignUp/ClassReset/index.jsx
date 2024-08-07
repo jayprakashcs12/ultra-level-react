@@ -9,9 +9,7 @@ class ClassReset extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            resetData: { fname: "", email: "", newpassword: "", c_newpassword: "" }, navigate: false,
-        };
+        this.state = { resetData: { fname: "", email: "", newpassword: "", c_newpassword: "" }, navigate: false, };
     }
 
     componentDidMount() {
@@ -24,13 +22,14 @@ class ClassReset extends Component {
     }
 
     resetsData = (e) => {
+
         let { name, value } = e.target;
         this.setState({ resetData: { ...this.state.resetData, [name]: value } });
     };
 
     handleSubmit = (e) => {
-
         e.preventDefault();
+
         let { newpassword, c_newpassword, fname, email } = this.state.resetData;
 
         if (!newpassword || !c_newpassword) {

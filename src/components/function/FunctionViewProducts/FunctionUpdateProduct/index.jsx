@@ -8,13 +8,7 @@ import { toast } from 'react-toastify';
 
 const FunctionUpdateProduct = () => {
 
-    let [product, setProduct] = useState({
-        pname: "",
-        pimg: "",
-        pprice: "",
-        pqty: "",
-        pdesc: ""
-    }),
+    let [product, setProduct] = useState({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }),
 
     { id } = useParams(), navigate = useNavigate();
 

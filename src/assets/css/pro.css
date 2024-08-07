@@ -8,7 +8,7 @@
     padding: 1%;
 }
 
-.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .hoc01-div, .hoc02-div, .pro-row-data, .link-div, .view-products-btn-div {
+.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .main-hoc-div, .pro-row-data, .link-div, .view-products-btn-div {
     display: flex;
 }
 
@@ -40,7 +40,7 @@
     margin: 1% 0;
 }
 
-.eshop-div, .hoc-main {
+.eshop-div, .main-hoc-div {
     flex-direction: column;
     border-radius: 20px;
     padding: 1% 2%;
@@ -55,15 +55,7 @@
     background-color: var(--color04);
 }
 
-.hoc01-div {
-    background-color: var(--color06);
-}
-
-.hoc02-div {
-    background-color: var(--color12);
-}
-
-.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .hoc01-div, .hoc02-div, .product-list-div, .alr-reg-div {
+.counter-apps, .eshop-div, .student-list-div, .multi-img-div, .product-list-div, .alr-reg-div, .main-hoc-div {
     text-align: center;
 }
 
@@ -75,7 +67,7 @@
     margin-top: 15px;
 }
 
-.parent-div, .products-div, .hoc01-div, .hoc02-div {
+.parent-div, .products-div, .hoc-div {
     flex-wrap: wrap;
 }
 
@@ -98,7 +90,7 @@
     margin-bottom: 1%;
 }
 
-.pro-input, .product-input, .product-textarea, .content-img {
+.pro-input, .product-input, .product-textarea, .content-img, .hoc-img {
     border-radius: 12px;
 }
 
@@ -121,16 +113,23 @@
     margin: 1% auto;
 }
 
+.content-img, .hoc-img {
+    width: 50%;
+}
+
 .content-img {
     height: 195px;
-    width: 50%;
+}
+
+.hoc-img {
+    height: 160px;
 }
 
 .pro-div::-webkit-scrollbar-thumb, .pro-btn {
     cursor: pointer;
 }
 
-.pro-login-state, .pro-state {
+.pro-login-state, .pro-state, .hoc-img {
     margin: 0 auto;
 }
 
@@ -170,7 +169,15 @@
     height: 200px;
 }
 
-.eshop-div, .pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .pro-label, .log-link {
+.hoc01-div {
+    background-color: var(--color13);
+}
+
+.hoc02-div {
+    background-color: var(--color10);
+}
+
+.eshop-div, .pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .pro-label, .log-link, .hoc-para, .main-hoc-div {
     color: var(--color059);
 }
 
@@ -205,11 +212,14 @@
     padding-top: 1%;
 }
 
-.sub-head, .product-head {
-    font-size: 22px;
+.sub-head, .product-head, .product-desc {
+    font-size: 20px;
 }
 
 .product-desc {
-    font-size: 20px;
     font-weight: 500;
+}
+
+.hoc-para {
+    font-size: 20px;
 }

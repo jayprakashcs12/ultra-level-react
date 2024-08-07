@@ -5,7 +5,8 @@ import { CreateContextApi } from '../FunctionContextApi';
 import ReactTooltip from 'react-tooltip';
 
 const FunctionContent = () => {
-    const context = useContext(CreateContextApi);
+
+    let context = useContext(CreateContextApi);
 
     useEffect(() => {
         document.title = "Function Context API";

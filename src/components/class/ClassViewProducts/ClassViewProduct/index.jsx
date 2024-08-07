@@ -9,13 +9,7 @@ class ClassViewProduct extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            product: {
-                pname: "",
-                pprice: "",
-                pqty: "",
-            }
-        };
+        this.state = { product: { pname: "", pprice: "", pqty: "", } };
         this.viewProducts = this.viewProducts.bind(this);
     }
 
@@ -26,8 +20,8 @@ class ClassViewProduct extends Component {
             this.setState({ product: data }, () => {
                 document.title = `${data.pname}`;
             });
-        } catch (error) {
-            toast.error("Error fetching product data", { autoClose: 750 });
+        } catch (err) {
+            toast.error("Error fetching product data", err, { autoClose: 750 });
         }
     }
 

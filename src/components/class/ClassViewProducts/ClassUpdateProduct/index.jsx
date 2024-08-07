@@ -10,20 +10,14 @@ class ClassUpdateProduct extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            product: {
-                pname: "",
-                pimg: "",
-                pprice: "",
-                pqty: "",
-                pdesc: ""
-            }
-        };
+        this.state = { product: { pname: "", pimg: "", pprice: "", pqty: "", pdesc: "" }};
         this.viewProducts = this.viewProducts.bind(this);
     }
 
     async componentDidMount() {
+
         let { id } = this.props.router.params;
+
         try {
             let { data } = await axiosInstance.get(`/products/${id}`);
             this.setState({ product: data }, () => {
@@ -35,7 +29,9 @@ class ClassUpdateProduct extends Component {
     }
 
     handleChange = (e) => {
+
         let { name, value } = e.target;
+
         this.setState(prevState => ({
             product: { ...prevState.product, [name]: value }
         }));
@@ -43,8 +39,9 @@ class ClassUpdateProduct extends Component {
 
     handleUpdate = async (e) => {
         e.preventDefault();
-        let { id } = this.props.router.params,
-        { pname, pprice, pqty } = this.state.product;
+
+        let { id } = this.props.router.params, { pname, pprice, pqty } = this.state.product;
+
         if (!pname || !pprice || !pqty) {
             toast.error("All fields are required...!", { autoClose: 750 });
         } else {
@@ -60,9 +57,7 @@ class ClassUpdateProduct extends Component {
     }
 
     handleClear = () => {
-        this.setState({
-            product: { pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }
-        });
+        this.setState({ product: { pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" } });
     }
 
     viewProducts() {

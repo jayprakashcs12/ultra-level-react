@@ -14,15 +14,7 @@ class AddProduct extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            product: {
-                pname: "",
-                pimg: "",
-                pprice: "",
-                pqty: "",
-                pdesc: ""
-            }
-        };
+        this.state = {product: { pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }};
         this.viewProducts = this.viewProducts.bind(this);
     }
 
@@ -35,7 +27,9 @@ class AddProduct extends Component {
 
     handleAdd = async (e) => {
         e.preventDefault();
+
         let { pname, pprice, pqty } = this.state.product;
+        
         if (!pname || !pprice || !pqty) {
             toast.error("All fields are required...!", { autoClose: 750 });
         } else {
@@ -51,9 +45,7 @@ class AddProduct extends Component {
     }
 
     handleClear = () => {
-        this.setState({
-            product: { pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }
-        });
+        this.setState({ product: { pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" } });
     }
 
     viewProducts() {

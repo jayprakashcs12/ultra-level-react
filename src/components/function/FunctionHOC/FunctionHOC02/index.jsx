@@ -1,20 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import hoc02Img from "../../../../assets/img/background/hcajs.png";
 import FunctionHocMain from '../FunctionHocMain';
 
-class FunctionHOC02 extends Component {
+const FunctionHOC02 = (props) => {
 
-    render() {
+    let { uiDeveloper, subjectName1, subjectName2, subjectName4 } = props.value;
 
-        let { travellerName, origin, destination, trainName } = this.props.value;
+    return (
 
-        return (
-            <>
-                <h1 className='sub-head'>
-                    {travellerName} travelled from {origin} to {destination} by {trainName}
-                </h1>
-            </>
-        );
-    }
-}
+        <>
+            <div className="main-hoc-div hoc02-div">
+                <h1 className='sub-head'> HOC02 </h1>
+                <img className='hoc-img' src={hoc02Img} alt={hoc02Img} />
+                <table>
+                    <tr>
+                        <td className='hoc-para'>
+                            Developer Name -
+                        </td>
+                        <td className='hoc-para'>
+                            {uiDeveloper}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className='hoc-para'>
+                            Technology used -
+                        </td>
+                        <td className='hoc-para'>
+                            {subjectName1}, {subjectName2}, & {subjectName4}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </>
+    );
+};
 
 export default FunctionHocMain(FunctionHOC02);

@@ -13,9 +13,11 @@ export default class ClassStudents extends Component {
     }
 
     render() {
+
         return (
+
             <>
-                <h1 className='pro-head'>Class Students Details</h1>
+                <h1 className='pro-head'> Class Students Details </h1>
                 <div className="pro-div students-div">
                     <div className="products-div">
                         {this.state.userData.map((x, i) => (

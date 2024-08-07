@@ -61,6 +61,7 @@ export default class ClassImgUpload extends Component {
     };
 
     render() {
+        
         let { imagePreviews } = this.state;
 
         return (
