@@ -30,7 +30,7 @@ class ClassUpdateProduct extends Component {
                 document.title = `Update ${data.pname}`;
             });
         } catch (err) {
-            toast.error("Error fetching product data : ", err, {autoclose: 750});
+            toast.error("Error fetching product data : ", err, { autoClose: 750 });
         }
     }
 
@@ -46,15 +46,15 @@ class ClassUpdateProduct extends Component {
         let { id } = this.props.router.params,
         { pname, pprice, pqty } = this.state.product;
         if (!pname || !pprice || !pqty) {
-            toast.error("All fields are required...!", {autoclose: 750});
+            toast.error("All fields are required...!", { autoClose: 750 });
         } else {
             let payload = { pname, pprice, pqty };
             try {
                 await axiosInstance.put(`/products/${id}`, payload);
-                toast.success(`${pname} updated Successfully...!`, {autoclose: 750});
+                toast.success(`${pname} updated Successfully...!`, { autoClose: 750 });
                 this.props.router.navigate("/class-view-products");
             } catch (err) {
-                toast.error(err.message, {autoclose: 750});
+                toast.error(err.message, { autoClose: 750 });
             }
         }
     }

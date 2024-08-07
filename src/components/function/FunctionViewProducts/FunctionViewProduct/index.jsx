@@ -28,7 +28,7 @@ const FunctionViewProduct = () => {
                 setProduct(data);
                 document.title = `${data.pname}`;
             } catch (error) {
-                toast.error("Error fetching product data", { autoclose: 750 });
+                toast.error("Error fetching product data", { autoClose: 750 });
             }
         };
 
