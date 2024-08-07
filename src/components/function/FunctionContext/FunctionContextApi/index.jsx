@@ -6,11 +6,12 @@ export const CreateContextApi = createContext();
 let { Provider } = CreateContextApi;
 
 const FunctionUser = ({ children }) => {
+
     let [count, setCount] = useState(0),
-    // user = "Function User", 
     minCount = 0, maxCount = 10, item = "Counter",
 
     handleDecrement = () => {
+
         if (count > minCount) {
             setCount(count - 1);
             toast.info(`You have ${count - 1} ${count - 1 < 2 ? item : item + "s"}...!`, { autoClose: 750 });
@@ -20,6 +21,7 @@ const FunctionUser = ({ children }) => {
     },
 
     handleIncrement = () => {
+
         if (count < maxCount) {
             setCount(count + 1);
             toast.success(`You have ${count + 1} ${count + 1 === 1 ? item : item + "s"}...!`, { autoClose: 750 });
@@ -29,6 +31,7 @@ const FunctionUser = ({ children }) => {
     },
 
     handleReset = () => {
+        
         toast.warn(`You have ${minCount} ${item}...!`, { autoClose: 750 });
         setCount(minCount);
     };

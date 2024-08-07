@@ -4,7 +4,7 @@ import FunctionGrandParents from './FunctionGrandParents';
 const FunctionPropsDrilling = () => {
 
     useEffect(() => {
-        document.title = "Function Props";
+        document.title = "Function Props Drilling";
     }, []);
 
     return (

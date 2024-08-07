@@ -17,10 +17,9 @@ const FunctionAddProduct = () => {
     navigate = useNavigate(),
 
     handleChange = (e) => {
+
         let { name, value } = e.target;
-        setProduct(prevProduct => ({
-            ...prevProduct, [name]: value
-        }));
+        setProduct(prevProduct => ({ ...prevProduct, [name]: value }));
     },
 
     handleAdd = async (e) => {
@@ -49,8 +48,9 @@ const FunctionAddProduct = () => {
     let { pname, pimg, pprice, pqty, pdesc } = product;
 
     return (
+        
         <>
-            <div className="add-div" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="add-div view-products-btn-div">
                 <h1 className='pro-head'> Add New Product </h1>
                 <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={() => navigate("/function-view-products")} data-tip data-for="goBack" />
                 <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go to products page </ReactTooltip>

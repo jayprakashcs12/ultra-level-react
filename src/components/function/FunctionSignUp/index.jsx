@@ -27,6 +27,7 @@ const FunctionSignUp = () => {
     },
 
     handleSubmit = (e) => {
+
         e.preventDefault();
         if (!fname || !email || !password) {
             toast.error("All fields are required...!", { autoClose: 750 });
@@ -40,11 +41,13 @@ const FunctionSignUp = () => {
     },
 
     handleLogin = () => {
+
         navigate("/function-login-form");
         toast.info(`Login with registered eMail id with password...!`, { autoClose: 750 });
     },
 
     handleClear = () => {
+        
         setFunData({ fname: "", lname: "", mobile: "", email: "", password: "", r_password: "" });
         toast.warn("Form Cleared Successfully...!", { autoClose: 750 });
     };

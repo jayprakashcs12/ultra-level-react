@@ -13,6 +13,7 @@ const FunctionContent = () => {
     }, []);
 
     return (
+
         <>
             <div className='counter-apps'>
                 <h1 className='pro-head count-head'> {context.count} </h1>
@@ -27,6 +28,7 @@ const FunctionContent = () => {
                 </div>
             </div>
         </>
+        
     );
 };
 

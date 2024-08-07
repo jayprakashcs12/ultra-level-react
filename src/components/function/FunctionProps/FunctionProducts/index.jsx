@@ -12,15 +12,17 @@ const FunctionProducts = () => {
     minCount = 0, maxCount = 10, item = "Mobile", product = productsData[0],
 
     handleDecrement = () => {
+
         if (count > minCount) {
             setCount(prevCount => prevCount - 1);
-            toast.info(`You selected ${count - 1} ${count - 1 < 2 ? item : `${item}s`}...!`, { autoClose: 1000 });
+            toast.info(`You selected ${count - 1} ${count - 1 < 2 ? item : `${item}s`}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select less than ${minCount} ${minCount < 1 ? item : `${item}s`}...!`, { autoClose: 1000 });
+            toast.error(`You can't select less than ${minCount} ${minCount < 1 ? item : `${item}s`}...!`, { autoClose: 750 });
         }
     },
 
     handleIncrement = () => {
+
         let maxValue = count + 1;
         if (count < maxCount) {
             setCount(maxValue);
@@ -31,6 +33,7 @@ const FunctionProducts = () => {
     },
 
     handleReset = () => {
+        
         let itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
         if (itemsReset) {
             toast.warn(`All items removed successfully...!`, { autoClose: 750 });
@@ -39,6 +42,7 @@ const FunctionProducts = () => {
     };
 
     return (
+
         <>
             <div className="pro-div parent-div props-div">
                 <div className="eshop-div function-products-div">
@@ -61,6 +65,7 @@ const FunctionProducts = () => {
                     handleReset={handleReset} handleIncrement={handleIncrement} />
             </div>
         </>
+
     );
 };
 

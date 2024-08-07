@@ -13,6 +13,7 @@ const FunctionUpdateProduct = () => {
     { id } = useParams(), navigate = useNavigate();
 
     useEffect(() => {
+
         let fetchProduct = async () => {
             try {
                 let { data } = await axiosInstance.get(`/products/${id}`);
@@ -58,8 +59,9 @@ const FunctionUpdateProduct = () => {
     { pname, pimg, pprice, pqty, pdesc } = product;
 
     return (
+        
         <>
-            <div className="add-div" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="add-div view-products-btn-div">
                 <h1 className='pro-head'> Function Update Product - {pname} </h1>
                 <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={viewProducts} data-tip data-for="goBack" />
                 <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go products page </ReactTooltip>

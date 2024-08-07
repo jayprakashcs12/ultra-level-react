@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FunctionHOC01 from './FunctionHOC01';
 
 const FunctionHOC = () => {
+
+    useEffect(() => {
+        document.title = "Function HOC";
+    }, []);
 
     return (
 

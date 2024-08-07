@@ -39,7 +39,7 @@ class ClassViewProducts extends Component {
 
     async handleDelete(id, pname) {
 
-        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname} ?`);
+        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname}...?`);
         if (!isConfirmed) {
             return;
         }

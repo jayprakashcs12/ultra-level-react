@@ -3,9 +3,10 @@ import { toast } from 'react-toastify';
 
 export const CreateContextApi = createContext();
 
-const { Provider } = CreateContextApi;
+let { Provider } = CreateContextApi;
 
 export default class ClassUser extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +16,9 @@ export default class ClassUser extends Component {
     };
 
     handleDecrement = () => {
+
         let { count } = this.state;
+
         if (count > this.minCount) {
             this.setState({ count: count - 1 });
             toast.info(`You have ${count - 1} ${count - 1 < 2 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
@@ -25,7 +28,9 @@ export default class ClassUser extends Component {
     };
 
     handleIncrement = () => {
+
         let { count } = this.state;
+
         if (count < this.maxCount) {
             this.setState({ count: count + 1 });
             toast.success(`You have ${count + 1} ${count + 1 === 1 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
@@ -40,6 +45,7 @@ export default class ClassUser extends Component {
     };
 
     render() {
+
         let { count } = this.state, { handleIncrement, handleDecrement, handleReset } = this;
 
         return (

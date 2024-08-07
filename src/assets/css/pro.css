@@ -79,10 +79,10 @@
     box-sizing: border-box;
     padding-left: 10px;
     min-width: 50%;
-    flex: 1 1 0%;
+    flex: 1;
 }
 
-.pro-label {
+.pro-label, .content-img  {
     display: block;
 }
 
@@ -119,6 +119,7 @@
 
 .content-img {
     height: 195px;
+    margin: 5px auto;
 }
 
 .hoc-img {
@@ -177,7 +178,7 @@
     background-color: var(--color10);
 }
 
-.eshop-div, .pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .pro-label, .log-link, .hoc-para, .main-hoc-div {
+.pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .hoc-para, .pro-label, .log-link {
     color: var(--color059);
 }
 

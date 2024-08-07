@@ -17,14 +17,15 @@ const FunctionImgUpload = () => {
     }, []);
 
     let handleFileChange = (e) => {
+        
         let files = Array.from(e.target.files),
         previews = files.map(file => URL.createObjectURL(file));
-
         setSelectedFiles(files);
         setImagePreviews(previews);
     },
 
     handleUpload = async () => {
+
         if (selectedFiles.length === 0) {
             toast.error('Please select at least 1 image to upload...!', { autoClose: 750 });
             return;
@@ -48,7 +49,7 @@ const FunctionImgUpload = () => {
     handleClear = () => {
         setSelectedFiles([]);
         setImagePreviews([]);
-        fileInputRef.current.value = null; // clear the file input
+        fileInputRef.current.value = null; 
         toast.error('Images cleared successfully...!', { autoClose: 750 });
     };
 
@@ -65,7 +66,7 @@ const FunctionImgUpload = () => {
                         </div>
                     ) : (
                         <>
-                            <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> <br />
+                            <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> 
                         </>
                     )}
                     <input className='file-upload' type="file" multiple onChange={handleFileChange} ref={fileInputRef} />

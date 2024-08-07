@@ -27,6 +27,7 @@ const FunctionReset = () => {
     },
 
     handleSubmit = (e) => {
+        
         e.preventDefault();
         let { newpassword, c_newpassword, fname, email } = resetData;
 

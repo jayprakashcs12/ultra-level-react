@@ -77,7 +77,7 @@ export default class ClassImgUpload extends Component {
                             </div>
                         ) : (
                             <>
-                                <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> <br />
+                                <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> 
                             </>
                         )}
                         <input className='file-upload' type="file" multiple onChange={this.handleFileChange} ref={this.fileInputRef} /> 

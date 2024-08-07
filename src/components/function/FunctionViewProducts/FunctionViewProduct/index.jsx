@@ -7,11 +7,7 @@ import { toast } from 'react-toastify';
 
 const FunctionViewProduct = () => {
 
-    let [product, setProduct] = useState({
-        pname: "",
-        pprice: "",
-        pqty: "",
-    }),
+    let [product, setProduct] = useState({ pname: "", pprice: "", pqty: "" }),
 
     { id } = useParams(), navigate = useNavigate(),
 
@@ -36,8 +32,9 @@ const FunctionViewProduct = () => {
     }, [id]);
 
     return (
+        
         <>
-            <div className="add-div" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="add-div view-products-btn-div">
                 <h1 className='pro-head'> Function View Product - {pname} </h1>
                 <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={viewProducts} data-tip data-for="goBack" />
                 <ReactTooltip id="goBack" place="bottom" effect="solid">Click here to go products page</ReactTooltip>

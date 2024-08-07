@@ -33,7 +33,7 @@ const FunctionViewProducts = () => {
 
     handleDelete = async (id, pname) => {
 
-        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname} ?`);
+        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname}...?`);
         if (!isConfirmed) {
             return;
         }
@@ -48,6 +48,7 @@ const FunctionViewProducts = () => {
     };
 
     return (
+
         <>
             <div className="add-div view-products-btn-div">
                 <h1 className='pro-head'> Function View Products </h1>
