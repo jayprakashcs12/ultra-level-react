@@ -20,7 +20,7 @@ const FunctionUpdateProduct = () => {
                 setProduct(data);
                 document.title = `Update ${data.pname}`;
             } catch (err) {
-                toast.error("Error fetching product data: " + err.message, { autoClose: 750 });
+                toast.warn("Error fetching product data: " + err.message, { autoClose: 750 });
             }
         };
         fetchProduct();
@@ -35,7 +35,7 @@ const FunctionUpdateProduct = () => {
         e.preventDefault();
         let { pname, pprice, pqty } = product;
         if (!pname || !pprice || !pqty) {
-            toast.error("All fields are required...!", { autoClose: 750 });
+            toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
             let payload = { pname, pprice, pqty };
             try {
@@ -43,7 +43,7 @@ const FunctionUpdateProduct = () => {
                 toast.success(`${pname} updated successfully!`, { autoClose: 750 });
                 navigate("/function-view-products");
             } catch (err) {
-                toast.error(err.message, { autoClose: 750 });
+                toast.warn(err.message, { autoClose: 750 });
             }
         }
     },

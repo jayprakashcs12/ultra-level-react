@@ -21,7 +21,7 @@ class ClassViewProduct extends Component {
                 document.title = `${data.pname}`;
             });
         } catch (err) {
-            toast.error("Error fetching product data", err, { autoClose: 750 });
+            toast.warn("Error fetching product data", err, { autoClose: 750 });
         }
     }
 

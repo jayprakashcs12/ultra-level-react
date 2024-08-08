@@ -31,7 +31,7 @@ class AddProduct extends Component {
         let { pname, pprice, pqty } = this.state.product;
         
         if (!pname || !pprice || !pqty) {
-            toast.error("All fields are required...!", { autoClose: 750 });
+            toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
             let payload = { pname, pprice, pqty };
             try {
@@ -39,7 +39,7 @@ class AddProduct extends Component {
                 toast.success(`${pname} added successfully...!`, { autoClose: 750 });
                 this.props.router.navigate("/class-view-products");
             } catch (err) {
-                toast.error(err.message, { autoClose: 750 });
+                toast.warn(err.message, { autoClose: 750 });
             }
         }
     }

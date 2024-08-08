@@ -14,25 +14,21 @@ export default class ClassImgUpload extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            selectedFiles: [],
-            imagePreviews: []
-        };
+        this.state = { selectedFiles: [], imagePreviews: [] };
         this.fileInputRef = createRef();
     }
 
     handleFileChange = (e) => {
         let files = Array.from(e.target.files),
         imagePreviews = files.map(file => URL.createObjectURL(file));
-
         this.setState({ selectedFiles: files, imagePreviews });
     };
 
     handleUpload = async () => {
-        let { selectedFiles } = this.state;
 
+        let { selectedFiles } = this.state;
         if (selectedFiles.length === 0) {
-            toast.error('Please select at least 1 image to upload...!', { autoClose: 750 });
+            toast.warn('Please select at least 1 image to upload...!', { autoClose: 750 });
             return;
         }
 
@@ -47,17 +43,14 @@ export default class ClassImgUpload extends Component {
             toast.success('Image uploaded successfully...!', { autoClose: 750 });
         } catch (err) {
             console.error('Error uploading the image:', err);
-            toast.error('Error uploading the image. Please try again...!', { autoClose: 750 });
+            toast.warn('Error uploading the image. Please try again...!', { autoClose: 750 });
         }
     };
 
     handleClear = () => {
-        this.setState({
-            selectedFiles: [],
-            imagePreviews: []
-        });
-        this.fileInputRef.current.value = null; // clear the file input
-        toast.error('Images cleared successfully...!', { autoClose: 750 });
+        this.setState({ selectedFiles: [], imagePreviews: [] });
+        this.fileInputRef.current.value = null;
+        toast.warn('Images cleared successfully...!', { autoClose: 750 });
     };
 
     render() {

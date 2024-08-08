@@ -5,7 +5,7 @@ import FunctionHOC02 from '../FunctionHOC02';
 
 const FunctionHOC01 = (props) => {
 
-    let { uiDeveloper, subjectName1, subjectName2, subjectName3 } = props.value;
+    let { uiDeveloper, subject1, subject2, subject3 } = props.value;
 
     return (
 
@@ -28,7 +28,7 @@ const FunctionHOC01 = (props) => {
                                 Technology used -
                             </td>
                             <td className='hoc-para'>
-                                {subjectName1}, {subjectName2}, & {subjectName3}
+                                {subject1}, {subject2}, & {subject3}
                             </td>
                         </tr>
                     </table>

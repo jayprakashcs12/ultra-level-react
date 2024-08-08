@@ -4,7 +4,7 @@ const FunctionHocMain = (FunctionHoc) => {
 
     let data = function() {
 
-        return <FunctionHoc value={{uiDeveloper:"Jay Prakash Singh", subjectName1:"HTML", subjectName2:"CSS", subjectName3:"ReactJS", subjectName4:"AngularJS"}} />
+        return <FunctionHoc value={{uiDeveloper:"Jay Prakash Singh", subject1:"HTML", subject2:"CSS", subject3:"ReactJS", subject4:"AngularJS"}} />
     }
 
     return data;

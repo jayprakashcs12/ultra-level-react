@@ -27,7 +27,7 @@ const FunctionImgUpload = () => {
     handleUpload = async () => {
 
         if (selectedFiles.length === 0) {
-            toast.error('Please select at least 1 image to upload...!', { autoClose: 750 });
+            toast.warn('Please select at least 1 image to upload...!', { autoClose: 750 });
             return;
         }
 
@@ -42,7 +42,7 @@ const FunctionImgUpload = () => {
             toast.success('Image uploaded successfully...!', { autoClose: 750 });
         } catch (err) {
             console.error('Error uploading the image:', err);
-            toast.error('Error uploading the image. Please try again...!', { autoClose: 750 });
+            toast.warn('Error uploading the image. Please try again...!', { autoClose: 750 });
         }
     },
 
@@ -50,7 +50,7 @@ const FunctionImgUpload = () => {
         setSelectedFiles([]);
         setImagePreviews([]);
         fileInputRef.current.value = null; 
-        toast.error('Images cleared successfully...!', { autoClose: 750 });
+        toast.warn('Images cleared successfully...!', { autoClose: 750 });
     };
 
     return (

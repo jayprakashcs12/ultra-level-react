@@ -23,7 +23,7 @@ const FunctionViewProducts = () => {
             setProducts(data);
             console.log(data, "data");
         } catch (err) {
-            console.error("Error fetching data", err);
+            console.warn("Error fetching data", err);
         }
     },
 
@@ -40,8 +40,8 @@ const FunctionViewProducts = () => {
     
         try {
             await axiosInstance.delete(`/products/${id}`);
-            toast.error(`${pname} deleted successfully...!`, { autoClose: 750 });
             fetchData();
+            toast.warn(`${pname} deleted successfully...!`, { autoClose: 750 });
         } catch (err) {
             console.error("Error deleting product", err);
         }

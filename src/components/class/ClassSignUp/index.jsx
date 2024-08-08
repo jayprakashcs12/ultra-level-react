@@ -13,7 +13,7 @@ class ClassSignUp extends Component {
     }
 
     componentDidMount() {
-        document.title = "Class Sign-Up Forms";
+        document.title = "Class Sign Up Form";
         localStorage.removeItem("userData");
     }
 
@@ -24,24 +24,31 @@ class ClassSignUp extends Component {
 
     handleKeyPress = (e) => {
         if (/[0-9\b\t\r]/.test(e.key) || e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "Delete" || e.key === "Backspace") {
-        } else {
-            e.preventDefault();
-        }
+        } else { e.preventDefault(); }
     };
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let { fname, lname, email, password } = this.state;
-        if (!fname || !email || !password) {
-            toast.error("All fields are required...!", { autoClose: 750 });
-        } else {
-            let payload = { fname, lname, email, password };
-            console.log(payload, "Class SignUp Form");
-            localStorage.setItem("userData", JSON.stringify(payload));
-            this.props.navigate("/class-login-form");
-            toast.success(`${fname} successfully created account with eMail ID - ${email} and Password - ${password}...!`, { autoClose: 750 });
+        
+        let { fname, lname, email, password } = this.state,
+        emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        payload = { fname, lname, email, password };
+        
+        if (!emailRegex.test(email)) {
+            toast.error(`${email} is not a valid email address!`, { autoClose: 750 });
+            return;
         }
-    };
+        
+        if (!fname || !email || !password) {
+            toast.warn("All fields are required!", { autoClose: 750 });
+            return;
+        }
+        
+        console.log(payload, "Function SignUp Form");
+        localStorage.setItem("userData", JSON.stringify(payload)); 
+        this.props.navigate("/class-login-form");
+        toast.success(`${fname} successfully created an account with email: ${email}`, { autoClose: 750 });
+    }
 
     handleLogin = () => {
         this.props.navigate("/class-login-form");
@@ -60,7 +67,7 @@ class ClassSignUp extends Component {
         return (
             <>
                 <h1 className='pro-head'> Class Sign Up Form </h1>
-                <div className='pro-div sign-up-div'>
+                <div className='pro-div Sign Up-div'>
                     <form className='pro-state'>
                         <div className="pro-row-data">
                             <div className="form-group">

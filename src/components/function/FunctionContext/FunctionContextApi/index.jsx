@@ -16,7 +16,7 @@ const FunctionUser = ({ children }) => {
             setCount(count - 1);
             toast.info(`You have ${count - 1} ${count - 1 < 2 ? item : item + "s"}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select less than ${minCount} ${minCount < 1 ? item : item + "s"}...!`, { autoClose: 750 });
+            toast.warn(`You can't select less than ${minCount} ${minCount < 1 ? item : item + "s"}...!`, { autoClose: 750 });
         }
     },
 
@@ -26,14 +26,13 @@ const FunctionUser = ({ children }) => {
             setCount(count + 1);
             toast.success(`You have ${count + 1} ${count + 1 === 1 ? item : item + "s"}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select more than ${maxCount} ${maxCount === 1 ? item : item + "s"}...!`, { autoClose: 750 });
+            toast.warn(`You can't select more than ${maxCount} ${maxCount === 1 ? item : item + "s"}...!`, { autoClose: 750 });
         }
     },
 
     handleReset = () => {
-        
-        toast.warn(`You have ${minCount} ${item}...!`, { autoClose: 750 });
         setCount(minCount);
+        toast.warn(`You have ${minCount} ${item}...!`, { autoClose: 750 });
     };
 
     return (

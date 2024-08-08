@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 const FunctionSignUp = () => {
 
     useEffect(() => {
-        document.title = "Function Sign-Up Forms";
+        document.title = "Function Sign Up Form";
         localStorage.removeItem("userData");
     }, []); 
 
@@ -27,17 +27,24 @@ const FunctionSignUp = () => {
     },
 
     handleSubmit = (e) => {
-
         e.preventDefault();
-        if (!fname || !email || !password) {
-            toast.error("All fields are required...!", { autoClose: 750 });
-        } else {
-            let payload = { fname, lname, email, password };
-            console.log(payload, "Function SignUp Form");
-            localStorage.setItem("userData", JSON.stringify(payload)); 
-            navigate("/function-login-form");
-            toast.success(`${fname} successfully created account with eMail ID - ${email} and Password - ${password}...!`, { autoClose: 750 });
+        
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        payload = { fname, lname, email, password };
+        if (!emailRegex.test(email)) {
+            toast.warn(`${email} is not a valid email address!`, { autoClose: 750 });
+            return;
         }
+        
+        if (!fname || !email || !password) {
+            toast.warn("All fields are required!", { autoClose: 750 });
+            return;
+        }
+
+        console.log(payload, "Function SignUp Form");
+        localStorage.setItem("userData", JSON.stringify(payload)); 
+        navigate("/function-login-form");
+        toast.success(`${fname} successfully created an account with email: ${email}`, { autoClose: 750 });
     },
 
     handleLogin = () => {
@@ -56,7 +63,7 @@ const FunctionSignUp = () => {
 
         <>
             <h1 className='pro-head'> Function Sign Up Form </h1>
-            <div className='pro-div sign-up-div'>
+            <div className='pro-div Sign Up-div'>
                 <form className='pro-state'>
                     <div className="pro-row-data">
                         <div className="form-group">

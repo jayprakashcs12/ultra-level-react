@@ -23,11 +23,10 @@ const FunctionViewProduct = () => {
                 let { data } = await axiosInstance.get(`/products/${id}`);
                 setProduct(data);
                 document.title = `${data.pname}`;
-            } catch (error) {
-                toast.error("Error fetching product data", { autoClose: 750 });
+            } catch (err) {
+                toast.warn("Error fetching product data", err, { autoClose: 750 });
             }
         };
-
         fetchProduct();
     }, [id]);
 

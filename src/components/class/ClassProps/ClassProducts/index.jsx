@@ -2,25 +2,21 @@ import React, { Component } from 'react';
 import productImage from "../../../../assets/img/products/samsung-galaxy.png";
 import { CiCircleMinus, CiCirclePlus, CiPower } from "react-icons/ci";
 import productsData from "../../../../server/data.json";
-import ReactTooltip from 'react-tooltip';
 import ClassPayments from '../ClassPayments';
+import ReactTooltip from 'react-tooltip';
 import { toast } from 'react-toastify';
 
 export default class ClassProducts extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            count: 0
-        };
+        this.state = { count: 0 };
     }
 
     minCount = 0; maxCount = 10; item = "Mobile";
 
     increment = () => {
-        this.setState((prevState) => ({
-            count: prevState.count + 1
-        }));
+        this.setState((prevState) => ({ count: prevState.count + 1 }));
     }
 
     handleDecrement = () => {
@@ -31,7 +27,7 @@ export default class ClassProducts extends Component {
             this.setState((prevState) => ({ count: prevState.count - 1 }));
             toast.info(`You selected ${count - 1} ${count - 1 < 2 ? `${item}` : `${item}s`}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select less than ${minCount} ${minCount < 1 ? `${item}` : `${item}s`}...!`, { autoClose: 750 });
+            toast.warn(`You can't select less than ${minCount} ${minCount < 1 ? `${item}` : `${item}s`}...!`, { autoClose: 750 });
         }
     }
 
@@ -43,14 +39,13 @@ export default class ClassProducts extends Component {
             this.setState({ count: maxValue });
             toast.success(`You selected ${maxValue} ${maxValue === 1 ? `${item}` : `${item}s`}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select more than ${maxCount} ${maxCount === 1 ? `${item}` : `${item}s`}...!`, { autoClose: 750 });
+            toast.warn(`You can't select more than ${maxCount} ${maxCount === 1 ? `${item}` : `${item}s`}...!`, { autoClose: 750 });
         }
     }
 
     handleReset = () => {
         
-        let { minCount } = this, itemsReset = window.confirm(`Are you sure, you want to remove all items ?`);
-
+        let { minCount } = this, itemsReset = window.confirm(`Are you sure, you want to remove all items...?`);
         if (itemsReset) {
             toast.warn(`All items removed successfully...!`, { autoClose: 750 });
             this.setState({ count: minCount });

@@ -43,7 +43,7 @@ const FunctionReset = () => {
             toast.success(`${fname} successfully updated password ${newpassword} for email id ${email}...!`, { autoClose: 750 });
             navigate("/home");
         } else {
-            toast.warn(`Password ${newpassword} & Confirm Password ${c_newpassword} are not matching...!`, { autoClose: 750 });
+            toast.warn(`Password - ${newpassword} & Confirm Password - ${c_newpassword} are not matching...!`, { autoClose: 750 });
         }
     },    
 

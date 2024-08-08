@@ -29,13 +29,13 @@ const Contact = () => {
     handleSubmit = async (e) => {
         e.preventDefault();
         if (!fname || !email || !mobile) {
-            toast.error("Please fill out all required fields...!");
+            toast.warn("Please fill out all required fields...!");
             return;
         }
 
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            toast.error(`${email} is not valid email id...!`, {autoClose : 750});
+            toast.warn(`${email} is not valid email id...!`, {autoClose : 750});
             return;
         }
         try {
@@ -43,7 +43,7 @@ const Contact = () => {
             toast.success(`${fullName} submitted form successfully...!` );
             setContactData({ fname: "", lname: "", email: "", mobile: "", message: "" });
         } catch (err) {
-            toast.error("Failed to submit the form. Please try again later.", err, {autoClose : 750});
+            toast.error("Failed to submit the form. Please try again later :", err, {autoClose : 750});
         }
     },
 

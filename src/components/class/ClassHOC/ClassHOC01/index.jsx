@@ -7,7 +7,7 @@ class ClassHOC01 extends Component {
 
     render() {
 
-        let { uiDeveloper, subjectName1, subjectName2, subjectName3 } = this.props.value;
+        let { uiDeveloper, subject1, subject2, subject3 } = this.props.value;
 
         return (
             
@@ -31,7 +31,7 @@ class ClassHOC01 extends Component {
                                         Technology used -
                                     </td>
                                     <td className='hoc-para'>
-                                        {subjectName1}, {subjectName2}, & {subjectName3}
+                                        {subject1}, {subject2}, & {subject3}
                                     </td>
                                 </tr>
                             </tbody>

@@ -17,7 +17,7 @@ const FunctionGrandParents = () => {
             setCount(prevCount => prevCount - 1);
             toast.info(`You selected ${count - 1} ${count - 1 < 2 ? item : `${item}s`}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select less than ${minCount} ${minCount < 1 ? item : `${item}s`}...!`, { autoClose: 750 });
+            toast.warn(`You can't select less than ${minCount} ${minCount < 1 ? item : `${item}s`}...!`, { autoClose: 750 });
         }
     },
 
@@ -28,7 +28,7 @@ const FunctionGrandParents = () => {
             setCount(maxValue);
             toast.success(`You selected ${maxValue} ${maxValue === 1 ? item : `${item}s`}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select more than ${maxCount} ${maxCount === 1 ? item : `${item}s`}...!`, { autoClose: 750 });
+            toast.warn(`You can't select more than ${maxCount} ${maxCount === 1 ? item : `${item}s`}...!`, { autoClose: 750 });
         }
     },
 
@@ -36,8 +36,8 @@ const FunctionGrandParents = () => {
 
         let itemsReset = window.confirm(`Are you sure, you want to remove all items...?`);
         if (itemsReset) {
-            toast.warn(`All items removed successfully...!`, { autoClose: 750 });
             setCount(minCount);
+            toast.warn(`All items removed successfully...!`, { autoClose: 750 });
         }
     };
 

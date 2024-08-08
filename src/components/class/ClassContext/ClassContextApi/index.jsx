@@ -23,7 +23,7 @@ export default class ClassUser extends Component {
             this.setState({ count: count - 1 });
             toast.info(`You have ${count - 1} ${count - 1 < 2 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select less than ${this.minCount} ${this.minCount < 1 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
+            toast.warn(`You can't select less than ${this.minCount} ${this.minCount < 1 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
         }
     };
 
@@ -35,13 +35,13 @@ export default class ClassUser extends Component {
             this.setState({ count: count + 1 });
             toast.success(`You have ${count + 1} ${count + 1 === 1 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
         } else {
-            toast.error(`You can't select more than ${this.maxCount} ${this.maxCount === 1 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
+            toast.warn(`You can't select more than ${this.maxCount} ${this.maxCount === 1 ? this.item : this.item + "s"}...!`, { autoClose: 750 });
         }
     };
 
     handleReset = () => {
-        toast.warn(`You have ${this.minCount} ${this.item}...!`, { autoClose: 750 });
         this.setState({ count: this.minCount });
+        toast.warn(`You have ${this.minCount} ${this.item}...!`, { autoClose: 750 });
     };
 
     render() {

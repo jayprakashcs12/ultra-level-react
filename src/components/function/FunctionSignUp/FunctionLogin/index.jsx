@@ -27,7 +27,7 @@ const FunctionLogin = () => {
     handleLogin = (e) => {
         e.preventDefault();
         if (!email || !password) {
-            toast.error("All fields are required...!", { autoClose: 750 });
+            toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
             let payload = { fname, email, password };
             console.log(payload, "Function Login Form");

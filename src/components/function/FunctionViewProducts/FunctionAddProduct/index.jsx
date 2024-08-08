@@ -26,7 +26,7 @@ const FunctionAddProduct = () => {
         e.preventDefault();
         let { pname, pprice, pqty } = product;
         if (!pname || !pprice || !pqty) {
-            toast.error("All fields are required...!", { autoClose: 750 });
+            toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
             let payload = { pname, pprice, pqty };
             try {
@@ -34,18 +34,16 @@ const FunctionAddProduct = () => {
                 toast.success(`${pname} added successfully...!`, { autoClose: 750 });
                 navigate("/fuction-view-products");
             } catch (err) {
-                toast.error(err.message, { autoClose: 750 });
+                toast.warn(err.message, { autoClose: 750 });
             }
         }
     },
 
     handleClear = () => {
-        setProduct({
-            pname: "", pprice: "", pqty: "", pdesc: "", pimg: ""
-        });
-    };
+        setProduct({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" });
+    },
 
-    let { pname, pimg, pprice, pqty, pdesc } = product;
+    { pname, pimg, pprice, pqty, pdesc } = product;
 
     return (
         

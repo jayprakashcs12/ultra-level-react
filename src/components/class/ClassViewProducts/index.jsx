@@ -11,9 +11,7 @@ class ClassViewProducts extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            products: []
-        };
+        this.state = { products: [] };
         this.addProduct = this.addProduct.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     }
@@ -29,7 +27,7 @@ class ClassViewProducts extends Component {
             this.setState({ products: data });
             console.log(data, "data");
         } catch (err) {
-            console.error("Error fetching data", err);
+            console.warn("Error fetching data", err);
         }
     }
 
@@ -46,7 +44,7 @@ class ClassViewProducts extends Component {
 
         try {
             await axiosInstance.delete(`/products/${id}`);
-            toast.error(`${pname} deleted successfully...!`);
+            toast.warn(`${pname} deleted successfully...!`);
             this.fetchData();
         } catch (err) {
             console.error("Error deleting product", err);
@@ -56,6 +54,7 @@ class ClassViewProducts extends Component {
     render() {
 
         return (
+
             <>
                 <div className="add-div view-prod-btn-div">
                     <h1 className='pro-head'>Class View Products</h1>
