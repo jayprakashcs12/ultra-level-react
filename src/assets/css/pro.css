@@ -8,7 +8,7 @@
     padding: 1%;
 }
 
-.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .main-hoc-div, .pro-row-data, .link-div, .view-prod-btn-div {
+.parent-div, .eshop-div, .img-preview, .btn-div, .products-div, .hoc-div, .main-hoc-div, .pro-row-data, .link-div, .view-prod-btn-div, .price-para {
     display: flex;
 }
 
@@ -20,11 +20,11 @@
     justify-content: space-between;
 }
 
-.parent-div, .img-preview, .btn-div, .products-div, .hoc-div, .img-row-data {
+.parent-div, .img-preview, .btn-div, .products-div, .hoc-div, .img-row-data, .price-para {
     justify-content: space-evenly;
 }
 
-.eshop-div, .btn-div, .pro-row-data, .view-prod-btn-div {
+.eshop-div, .btn-div, .pro-row-data, .view-prod-btn-div, .price-para {
     align-items: center;
 }
 
@@ -178,7 +178,7 @@
     background-color: var(--color10);
 }
 
-.pro-head, .pro-para, .sub-head, .product-head, .product-para, .student-para, .hoc-para, .pro-label, .log-link {
+.pro-head, .pro-para, .sub-head, .product-head, .prod-para, .student-para, .hoc-para, .pro-label, .log-link {
     color: var(--color059);
 }
 

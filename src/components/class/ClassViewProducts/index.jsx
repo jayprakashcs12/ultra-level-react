@@ -14,6 +14,7 @@ class ClassViewProducts extends Component {
         this.state = { products: [] };
         this.addProduct = this.addProduct.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.fetchData = this.fetchData.bind(this);
     }
 
     componentDidMount() {
@@ -35,8 +36,12 @@ class ClassViewProducts extends Component {
         this.props.navigate("/class-add-product");
     }
 
-    async handleDelete(id, pname) {
+    calculateDiscount({ oldPrice, newPrice }) {
+        let discount = ((oldPrice - newPrice) / oldPrice) * 100;
+        return discount.toFixed(2);
+    }
 
+    async handleDelete(id, pname) {
         let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname}...?`);
         if (!isConfirmed) {
             return;
@@ -52,33 +57,38 @@ class ClassViewProducts extends Component {
     }
 
     render() {
-
         return (
-
             <>
                 <div className="add-div view-prod-btn-div">
                     <h1 className='pro-head'>Class View Products</h1>
                     <CiCirclePlus size={35} className="pro-btn dec-btn" onClick={this.addProduct} data-tip data-for="addProduct" />
-                    <ReactTooltip id="addProduct" place="bottom" effect="solid"> Click here to add new product </ReactTooltip>
+                    <ReactTooltip id="addProduct" place="bottom" effect="solid"> Click here to add a new product </ReactTooltip>
                 </div>
                 <div className="pro-div view-products-div">
                     <div className="products-div">
                         {this.state.products.map((x, i) => (
                             <div key={x.id} className='product-list-div'>
-                                <p className='product-para'>{i + 1}</p>
-                                <p className='product-para'><b>{x.pname}</b></p>
+                                <p className='prod-para'>{i + 1}</p>
+                                <p className='prod-para'><b>{x.pname}</b></p>
+                                <p className='prod-para price-para'>
+                                    <strike><b>₹ {x.poldprice} /-</b></strike> 
+                                    <b>₹ {x.pnewprice} /-</b>
+                                </p>
+                                <p className='prod-para'>
+                                    <b> {this.calculateDiscount({ oldPrice: x.poldprice, newPrice: x.pnewprice })} % </b> 
+                                </p>
                                 <div className="btn-div">
                                     <Link className='act-btn link-btn' to={`/class-view-product/${x.id}`}> 
-                                        <PiEyeThin size={35} className="pro-btn reset-btn" data-tip data-for="viewProduct" />
+                                        <PiEyeThin size={35} className="pro-btn reset-btn" data-tip data-for={`viewProduct-${x.id}`} />
                                     </Link>
-                                    <ReactTooltip id="viewProduct" place="bottom" effect="solid"> View the product </ReactTooltip>
+                                    <ReactTooltip id={`viewProduct-${x.id}`} place="bottom" effect="solid"> View the product </ReactTooltip>
                                     <PiTrashLight size={35} className="pro-btn inc-btn" onClick={() => this.handleDelete(x.id, x.pname)} 
-                                        data-tip data-for="deleteProduct" />
-                                    <ReactTooltip id="deleteProduct" place="bottom" effect="solid">Delete the product </ReactTooltip>
+                                        data-tip data-for={`deleteProduct-${x.id}`} />
+                                    <ReactTooltip id={`deleteProduct-${x.id}`} place="bottom" effect="solid">Delete the product </ReactTooltip>
                                     <Link className='act-btn link-btn' to={`/class-update-product/${x.id}`}> 
-                                        <PiPencilThin size={35} className="pro-btn reset-btn" data-tip data-for="updateProduct" />
+                                        <PiPencilThin size={35} className="pro-btn reset-btn" data-tip data-for={`updateProduct-${x.id}`} />
                                     </Link>
-                                    <ReactTooltip id="updateProduct" place="bottom" effect="solid"> Update the product </ReactTooltip>
+                                    <ReactTooltip id={`updateProduct-${x.id}`} place="bottom" effect="solid"> Update the product </ReactTooltip>
                                 </div>   
                             </div>
                         ))}

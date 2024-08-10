@@ -12,7 +12,7 @@ const FunctionAddProduct = () => {
         document.title = "Function Add Product";
     }, []);
 
-    let [product, setProduct] = useState({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }),
+    let [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" }),
     [imageData, setImageData] = useState(null),
 
     navigate = useNavigate(),
@@ -25,11 +25,11 @@ const FunctionAddProduct = () => {
 
     handleAdd = async (e) => {
         e.preventDefault();
-        let { pname, pprice, pqty } = product;
-        if (!pname || !pprice || !pqty) {
+        let { pname, poldprice, pnewprice, pqty } = product;
+        if (!pname || !poldprice || !pqty) {
             toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
-            let payload = { pname, pprice, pqty };
+            let payload = { pname, poldprice, pqty };
             try {
                 await axiosInstance.post('/products', payload);
                 toast.success(`${pname} added successfully...!`, { autoClose: 750 });
@@ -54,10 +54,10 @@ const FunctionAddProduct = () => {
     },
 
     handleClear = () => {
-        setProduct({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" });
+        setProduct({ pname: "", poldprice: "", pnewprice:"", pqty: "", pdesc: "" });
     },
 
-    { pname, pimg, pprice, pqty, pdesc } = product;
+    { pname, poldprice, pnewprice, pqty, pdesc } = product;
 
     return (
         
@@ -85,8 +85,8 @@ const FunctionAddProduct = () => {
                         </div>
 
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pimg"> Product Image </label>
-                            <input className='product-input' type="text" name='pimg' value={pimg} placeholder='Enter Your Product Image URL'
+                            <label className='pro-label' htmlFor="pqty"> Product Quantity </label>
+                            <input className='product-input' type="number" name='pqty' value={pqty} placeholder='Enter Your Product Quantity'
                                 onChange={handleChange}
                             />
                         </div>
@@ -94,15 +94,15 @@ const FunctionAddProduct = () => {
 
                     <div className="pro-row-data">
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pprice"> Product Price </label>
-                            <input className='product-input' type="number" name='pprice' value={pprice} placeholder='Enter Your Product Price'
+                            <label className='pro-label' htmlFor="poldprice"> Product Old Price </label>
+                            <input className='product-input' type="number" name='poldprice' value={poldprice} placeholder='Enter Your Product Price'
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pqty"> Product Quantity </label>
-                            <input className='product-input' type="number" name='pqty' value={pqty} placeholder='Enter Your Product Quantity'
+                            <label className='pro-label' htmlFor="pnewprice"> Product New Price </label>
+                            <input className='product-input' type="number" name='pnewprice' value={pnewprice} placeholder='Enter Your Product Price'
                                 onChange={handleChange}
                             />
                         </div>

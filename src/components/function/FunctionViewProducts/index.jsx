@@ -9,8 +9,7 @@ import { toast } from 'react-toastify';
 
 const FunctionViewProducts = () => {
 
-    let [products, setProducts] = useState([]),
-    navigate = useNavigate();
+    let [products, setProducts] = useState([]), navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Function View Products";
@@ -31,48 +30,58 @@ const FunctionViewProducts = () => {
         navigate("/function-add-product");
     },
 
-    handleDelete = async (id, pname) => {
+    calculateDiscount = ({ oldPrice, newPrice }) => {
+        let discount = ((oldPrice - newPrice) / oldPrice) * 100;
+        return discount.toFixed(2);
+    },
 
-        let isConfirmed = window.confirm(`Are you sure, you want to delete ${pname}...?`);
+    handleDelete = async (id, pname) => {
+        let isConfirmed = window.confirm(`Are you sure you want to delete ${pname}?`);
         if (!isConfirmed) {
             return;
         }
-    
         try {
             await axiosInstance.delete(`/products/${id}`);
             fetchData();
             toast.warn(`${pname} deleted successfully...!`, { autoClose: 750 });
         } catch (err) {
+            toast.warn("Error deleting product", err, { autoClose: 750 });
             console.error("Error deleting product", err);
         }
     };
 
     return (
-
         <>
             <div className="add-div view-prod-btn-div">
-                <h1 className='pro-head'> Function View Products </h1>
+                <h1 className='pro-head'>Function View Products</h1>
                 <CiCirclePlus size={35} className="pro-btn dec-btn" onClick={addProduct} data-tip data-for="addProduct" />
-                <ReactTooltip id="addProduct" place="bottom" effect="solid"> Click here to add new product </ReactTooltip>
+                <ReactTooltip id="addProduct" place="bottom" effect="solid">Click here to add a new product</ReactTooltip>
             </div>
             <div className="pro-div view-products-div">
                 <div className="products-div">
                     {products.map((x, i) => (
                         <div key={x.id} className='product-list-div'>
-                            <p className='product-para'>{i + 1}</p>
-                            <p className='product-para'><b>{x.pname}</b></p>
+                            <p className='prod-para'>{i + 1}</p>
+                            <p className='prod-para'><b>{x.pname}</b></p>
+                            <p className='prod-para price-para'>
+                                <strike><b>₹ {x.poldprice} /-</b></strike> 
+                                <b>₹ {x.pnewprice} /-</b>
+                            </p>
+                            <p className='prod-para'>
+                                <b> {calculateDiscount({ oldPrice: x.poldprice, newPrice: x.pnewprice })} % </b> 
+                            </p>
                             <div className="btn-div">
                                 <Link className='act-btn link-btn' to={`/function-view-product/${x.id}`}> 
-                                    <PiEyeThin size={35} className="pro-btn reset-btn" data-tip data-for="viewProduct" />
+                                    <PiEyeThin size={35} className="pro-btn reset-btn" data-tip data-for={`viewProduct-${x.id}`} />
                                 </Link>
-                                <ReactTooltip id="viewProduct" place="bottom" effect="solid"> View the product </ReactTooltip>
+                                <ReactTooltip id={`viewProduct-${x.id}`} place="bottom" effect="solid">View the product</ReactTooltip>
                                 <PiTrashLight size={35} className="pro-btn inc-btn" onClick={() => handleDelete(x.id, x.pname)} 
-                                    data-tip data-for="deleteProduct" />
-                                <ReactTooltip id="deleteProduct" place="bottom" effect="solid">Delete the product </ReactTooltip>
+                                    data-tip data-for={`deleteProduct-${x.id}`} />
+                                <ReactTooltip id={`deleteProduct-${x.id}`} place="bottom" effect="solid">Delete the product</ReactTooltip>
                                 <Link className='act-btn link-btn' to={`/function-update-product/${x.id}`}> 
-                                    <PiPencilThin size={35} className="pro-btn reset-btn" data-tip data-for="updateProduct" />
+                                    <PiPencilThin size={35} className="pro-btn reset-btn" data-tip data-for={`updateProduct-${x.id}`} />
                                 </Link>
-                                <ReactTooltip id="updateProduct" place="bottom" effect="solid"> Update the product </ReactTooltip>
+                                <ReactTooltip id={`updateProduct-${x.id}`} place="bottom" effect="solid">Update the product</ReactTooltip>
                             </div>   
                         </div>
                     ))}
