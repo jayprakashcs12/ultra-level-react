@@ -13,6 +13,7 @@ const FunctionAddProduct = () => {
     }, []);
 
     let [product, setProduct] = useState({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" }),
+    [imageData, setImageData] = useState(null),
 
     navigate = useNavigate(),
 
@@ -39,6 +40,19 @@ const FunctionAddProduct = () => {
         }
     },
 
+    onFileChange = (e) => {
+        let files = e.target.files;
+        if (files.length > 0) {
+            let file = files[0], reader = new FileReader();
+            reader.onload = (e) => {
+                setImageData(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setImageData(null);
+        }
+    },
+
     handleClear = () => {
         setProduct({ pname: "", pprice: "", pqty: "", pdesc: "", pimg: "" });
     },
@@ -55,6 +69,13 @@ const FunctionAddProduct = () => {
             </div>
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
+                    <div className="pro-row-data img-row-data">
+                        {imageData ? 
+                            <img src={imageData} alt="Preview" className='content-img' /> 
+                            :
+                            <input type="file" accept="image/*" onChange={onFileChange} />
+                        }
+                    </div>
                     <div className="pro-row-data">
                         <div className="form-group">
                             <label className='pro-label' htmlFor="pname"> Product Name </label>

@@ -20,7 +20,7 @@
     justify-content: space-between;
 }
 
-.parent-div, .img-preview, .btn-div, .products-div, .hoc-div {
+.parent-div, .img-preview, .btn-div, .products-div, .hoc-div, .img-row-data {
     justify-content: space-evenly;
 }
 
