@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiArrowCircleLeftThin, PiPencilThin } from "react-icons/pi";
+import hdImg from "../../../../assets/img/products/app-product.png";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
@@ -13,9 +14,10 @@ const FunctionAddProduct = () => {
     }, []);
 
     let [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" }),
-    [imageData, setImageData] = useState(null),
+    [file, setFile] = useState(''),
 
     navigate = useNavigate(),
+    [imgPreviewUrl, setImgPreviewUrl] = useState(hdImg),
 
     handleChange = (e) => {
 
@@ -25,7 +27,7 @@ const FunctionAddProduct = () => {
 
     handleAdd = async (e) => {
         e.preventDefault();
-        let { pname, poldprice, pnewprice, pqty } = product;
+        let { pname, pqty } = product;
         if (!pname || !poldprice || !pqty) {
             toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
@@ -41,16 +43,13 @@ const FunctionAddProduct = () => {
     },
 
     onFileChange = (e) => {
-        let files = e.target.files;
-        if (files.length > 0) {
-            let file = files[0], reader = new FileReader();
-            reader.onload = (e) => {
-                setImageData(e.target.result);
-            };
-            reader.readAsDataURL(file);
-        } else {
-            setImageData(null);
-        }
+        e.preventDefault();
+        let reader = new FileReader(), file = e.target.files[0];
+        reader.onloadend = () => {
+        setFile(file);
+        setImgPreviewUrl(reader.result);
+        };
+        reader.readAsDataURL(file);
     },
 
     handleClear = () => {
@@ -70,10 +69,10 @@ const FunctionAddProduct = () => {
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
                     <div className="pro-row-data img-row-data">
-                        {imageData ? 
-                            <img src={imageData} alt="Preview" className='content-img' /> 
+                        {file ?
+                            <img src={imgPreviewUrl} alt={imgPreviewUrl} className='preview-img' />
                             :
-                            <input type="file" accept="image/*" onChange={onFileChange} />
+                            <img src={hdImg} alt={hdImg} className='preview-img' />
                         }
                     </div>
                     <div className="pro-row-data">
@@ -95,14 +94,14 @@ const FunctionAddProduct = () => {
                     <div className="pro-row-data">
                         <div className="form-group">
                             <label className='pro-label' htmlFor="poldprice"> Product Old Price </label>
-                            <input className='product-input' type="number" name='poldprice' value={poldprice} placeholder='Enter Your Product Price'
+                            <input className='product-input' type="number" name='poldprice' value={poldprice} placeholder='Enter Your Product Old Price'
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="form-group">
                             <label className='pro-label' htmlFor="pnewprice"> Product New Price </label>
-                            <input className='product-input' type="number" name='pnewprice' value={pnewprice} placeholder='Enter Your Product Price'
+                            <input className='product-input' type="number" name='pnewprice' value={pnewprice} placeholder='Enter Your Product New Price'
                                 onChange={handleChange}
                             />
                         </div>

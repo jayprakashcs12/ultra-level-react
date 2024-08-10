@@ -13,22 +13,21 @@ const FunctionUpdateProduct = () => {
     let [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" }),
         [imageData, setImageData] = useState(null);
 
-    useEffect(() => {
+    useEffect((id) => {
         document.title = "Function Update Product";
-        fetchProductDetails();
-    }, []);
+        let fetchProdDetails = async () => {
+            try {
+                let response = await axiosInstance.get(`/products/${id}`), { pname, poldprice, pnewprice, pqty, pdesc, image } = response.data;
+                setProduct({ pname, poldprice, pnewprice, pqty, pdesc });
+                setImageData(image);
+            } catch (err) {
+                toast.warn("Failed to fetch product details", err, { autoClose: 750 });
+            }
+        };
+        fetchProdDetails();
+    },[]);
 
-    let fetchProductDetails = async () => {
-        try {
-            let response = await axiosInstance.get(`/products/${id}`), { pname, poldprice, pnewprice, pqty, pdesc, image } = response.data;
-            setProduct({ pname, poldprice, pnewprice, pqty, pdesc });
-            setImageData(image);
-        } catch (err) {
-            toast.warn("Failed to fetch product details", err, { autoClose: 750 });
-        }
-    },
-
-    handleChange = (e) => {
+    let handleChange = (e) => {
         let { name, value } = e.target;
         setProduct(prevProduct => ({ ...prevProduct, [name]: value }));
     },
@@ -105,14 +104,14 @@ const FunctionUpdateProduct = () => {
                     <div className="pro-row-data">
                         <div className="form-group">
                             <label className='pro-label' htmlFor="poldprice"> Product Old Price </label>
-                            <input className='product-input' type="number" name='poldprice' value={poldprice} placeholder='Enter Your Product Price'
+                            <input className='product-input' type="number" name='poldprice' value={poldprice} placeholder='Enter Your Product Old Price'
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="form-group">
                             <label className='pro-label' htmlFor="pnewprice"> Product New Price </label>
-                            <input className='product-input' type="number" name='pnewprice' value={pnewprice} placeholder='Enter Your Product Price'
+                            <input className='product-input' type="number" name='pnewprice' value={pnewprice} placeholder='Enter Your Product New Price'
                                 onChange={handleChange}
                             />
                         </div>
