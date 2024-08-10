@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiArrowCircleLeftThin, PiPencilThin } from "react-icons/pi";
+import hdImg from "../../../../assets/img/products/app-product.png";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate, useParams } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
@@ -11,23 +12,25 @@ const FunctionUpdateProduct = () => {
     let { id } = useParams(), navigate = useNavigate();
 
     let [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" }),
-        [imageData, setImageData] = useState(null);
+        [imgPreviewUrl, setImgPreviewUrl] = useState(hdImg),
+        [file, setFile] = useState(null);
 
     useEffect((id) => {
         document.title = "Function Update Product";
-        let fetchProdDetails = async () => {
-            try {
-                let response = await axiosInstance.get(`/products/${id}`), { pname, poldprice, pnewprice, pqty, pdesc, image } = response.data;
-                setProduct({ pname, poldprice, pnewprice, pqty, pdesc });
-                setImageData(image);
-            } catch (err) {
-                toast.warn("Failed to fetch product details", err, { autoClose: 750 });
-            }
-        };
         fetchProdDetails();
     },[]);
 
-    let handleChange = (e) => {
+    let fetchProdDetails = async () => {
+        try {
+            let response = await axiosInstance.get(`products/${id}`), { pname, poldprice, pnewprice, pqty, pdesc, image } = response.data;
+            setProduct({ pname, poldprice, pnewprice, pqty, pdesc });
+            setFile(image);
+        } catch (err) {
+            toast.warn("Failed to fetch product details", err, { autoClose: 750 });
+        }
+    },
+
+    handleChange = (e) => {
         let { name, value } = e.target;
         setProduct(prevProduct => ({ ...prevProduct, [name]: value }));
     },
@@ -38,13 +41,13 @@ const FunctionUpdateProduct = () => {
         if (!pname || !poldprice || !pqty) {
             toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
-            let payload = { pname, poldprice, pnewprice, pqty, pdesc, imageData };
+            let payload = { pname, poldprice, pnewprice, pqty, pdesc, file };
             try {
                 await axiosInstance.put(`/products/${id}`, payload);
                 toast.success(`${pname} updated successfully...!`, { autoClose: 750 });
                 navigate("/function-view-products");
             } catch (err) {
-                toast.warn(err.message, { autoClose: 750 });
+                toast.warn(err.message, err, { autoClose: 750 });
             }
         }
     },
@@ -54,17 +57,17 @@ const FunctionUpdateProduct = () => {
         if (files.length > 0) {
             let file = files[0], reader = new FileReader();
             reader.onload = (e) => {
-                setImageData(e.target.result);
+                setFile(e.target.result);
             };
             reader.readAsDataURL(file);
         } else {
-            setImageData(null);
+            setFile(null);
         }
     },
 
     handleClear = () => {
         setProduct({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" });
-        setImageData(null);
+        setFile(null);
     },
 
     { pname, poldprice, pnewprice, pqty, pdesc } = product;
@@ -79,11 +82,14 @@ const FunctionUpdateProduct = () => {
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
                     <div className="pro-row-data img-row-data">
-                        {imageData ? 
-                            <img src={imageData} alt="Preview" className='content-img' /> 
-                            :
-                            <input type="file" accept="image/*" onChange={onFileChange} />
-                        }
+                        {file ? (
+                            <img src={file} alt="Preview" className="preview-img" />
+                        ) : (
+                            <>
+                                <img src={hdImg} alt="Preview" className="preview-img" />
+                                <input type="file" accept="image/*" onChange={onFileChange} />
+                            </>
+                        )}
                     </div>
                     <div className="pro-row-data">
                         <div className="form-group">

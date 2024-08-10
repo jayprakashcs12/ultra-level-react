@@ -33,23 +33,26 @@ const FunctionAddProduct = () => {
         } else {
             let payload = { pname, poldprice, pqty };
             try {
-                await axiosInstance.post('/products', payload);
+                await axiosInstance.post('products', payload);
                 toast.success(`${pname} added successfully...!`, { autoClose: 750 });
                 navigate("/fuction-view-products");
             } catch (err) {
-                toast.warn(err.message, { autoClose: 750 });
+                toast.warn(err.message, err, { autoClose: 750 });
             }
         }
     },
 
     onFileChange = (e) => {
-        e.preventDefault();
-        let reader = new FileReader(), file = e.target.files[0];
-        reader.onloadend = () => {
-        setFile(file);
-        setImgPreviewUrl(reader.result);
-        };
-        reader.readAsDataURL(file);
+        let files = e.target.files;
+        if (files.length > 0) {
+            let file = files[0], reader = new FileReader();
+            reader.onload = (e) => {
+                setFile(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setFile(null);
+        }
     },
 
     handleClear = () => {
@@ -69,11 +72,14 @@ const FunctionAddProduct = () => {
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
                     <div className="pro-row-data img-row-data">
-                        {file ?
-                            <img src={imgPreviewUrl} alt={imgPreviewUrl} className='preview-img' />
-                            :
-                            <img src={hdImg} alt={hdImg} className='preview-img' />
-                        }
+                        {file ? (
+                            <img src={file} alt="Preview" className="preview-img" />
+                        ) : (
+                            <>
+                                <img src={hdImg} alt="Preview" className="preview-img" />
+                                <input type="file" accept="image/*" onChange={onFileChange} />
+                            </>
+                        )}
                     </div>
                     <div className="pro-row-data">
                         <div className="form-group">
