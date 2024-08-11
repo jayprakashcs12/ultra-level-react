@@ -10,7 +10,7 @@
       "id": "3"
     },
     {
-      "pname": "Smart Phones",
+      "pname": "Smart Phone",
       "poldprice": "30000",
       "pnewprice": "25000",
       "pqty": "50",
@@ -33,9 +33,16 @@
     {
       "pname": "Refrigerator",
       "poldprice": "40000",
-      "pnewprice": "30000",
+      "pnewprice": "25000",
       "pqty": "8",
       "id": "8"
+    },
+    {
+      "pname": "Shoes",
+      "poldprice": "1000",
+      "pnewprice": "500",
+      "pqty": "50",
+      "id": "2295"
     }
   ]
 }

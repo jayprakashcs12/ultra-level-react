@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { PiPencilThin } from 'react-icons/pi';
+import { PiTelegramLogoThin } from 'react-icons/pi';
 import ReactTooltip from 'react-tooltip';
 import { CiUndo } from 'react-icons/ci';
 import { toast } from 'react-toastify';
@@ -80,7 +80,7 @@ class ClassReset extends Component {
                         <div className="btn-div">
                             <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearReset" onClick={this.handleClear} />
                             <ReactTooltip id="clearReset" place="bottom" effect="solid"> Clear the password fields </ReactTooltip>
-                            <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="doReset" onClick={this.handleSubmit} />
+                            <PiTelegramLogoThin size={35} className="pro-btn inc-btn" data-tip data-for="doReset" onClick={this.handleSubmit} />
                             <ReactTooltip id="doReset" place="bottom" effect="solid"> Reset the password </ReactTooltip>
                         </div>
 

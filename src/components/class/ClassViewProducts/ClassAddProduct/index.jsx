@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PiArrowCircleLeftThin, PiPencilThin } from "react-icons/pi";
+import { PiArrowCircleLeftThin, PiTelegramLogoThin } from "react-icons/pi";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
@@ -107,7 +107,7 @@ class AddProduct extends Component {
                         <div className="btn-div">
                             <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearFields" onClick={this.handleClear} />
                             <ReactTooltip id="clearFields" place="bottom" effect="solid"> Clear the product fields </ReactTooltip>
-                            <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="addProduct" onClick={this.handleAdd} />
+                            <PiTelegramLogoThin size={35} className="pro-btn inc-btn" data-tip data-for="addProduct" onClick={this.handleAdd} />
                             <ReactTooltip id="addProduct" place="bottom" effect="solid"> Add the product </ReactTooltip>
                         </div>
                     </form>

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { PiArrowCircleLeftThin, PiPencilThin } from "react-icons/pi";
-import hdImg from "../../../../assets/img/products/app-product.png";
+import React, { useEffect, useState, useCallback } from 'react';
+import { PiArrowCircleLeftThin, PiTelegramLogoThin } from "react-icons/pi";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate, useParams } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
@@ -9,65 +8,61 @@ import { toast } from 'react-toastify';
 
 const FunctionUpdateProduct = () => {
 
-    let { id } = useParams(), navigate = useNavigate();
+    let { id } = useParams(), navigate = useNavigate(),
 
-    let [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" }),
-        [imgPreviewUrl, setImgPreviewUrl] = useState(hdImg),
-        [file, setFile] = useState(null);
+    [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" });
 
-    useEffect((id) => {
-        document.title = "Function Update Product";
-        fetchProdDetails();
-    },[]);
-
-    let fetchProdDetails = async () => {
+    const fetchProdDetails = useCallback(async () => {
         try {
-            let response = await axiosInstance.get(`products/${id}`), { pname, poldprice, pnewprice, pqty, pdesc, image } = response.data;
+            let response = await axiosInstance.get(`products/${id}`),
+            { pname, poldprice, pnewprice, pqty, pdesc } = response.data;
             setProduct({ pname, poldprice, pnewprice, pqty, pdesc });
-            setFile(image);
         } catch (err) {
             toast.warn("Failed to fetch product details", err, { autoClose: 750 });
         }
-    },
+    }, [id]);
 
-    handleChange = (e) => {
+    useEffect(() => {
+        let fetchProduct = async () => {
+            try {
+                let { data } = await axiosInstance.get(`/products/${id}`);
+                setProduct(data);
+                document.title = `Edit ${data.pname}`;
+            } catch (err) {
+                toast.warn("Error fetching product data", err, { autoClose: 750 });
+            }
+        };
+        fetchProduct();
+        fetchProdDetails();
+    }, [fetchProdDetails, id]);
+
+    let handleChange = (e) => {
         let { name, value } = e.target;
         setProduct(prevProduct => ({ ...prevProduct, [name]: value }));
     },
 
     handleUpdate = async (e) => {
         e.preventDefault();
-        let { pname, poldprice, pnewprice, pqty } = product;
-        if (!pname || !poldprice || !pqty) {
+        let { pname, poldprice, pnewprice, pqty, pdesc } = product;
+    
+        if (!pname || !poldprice || !pnewprice || !pqty) {
             toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
-            let payload = { pname, poldprice, pnewprice, pqty, pdesc, file };
+            let payload = { pname, poldprice, pnewprice, pqty, pdesc };
+            console.log(payload, "payload");
             try {
                 await axiosInstance.put(`/products/${id}`, payload);
                 toast.success(`${pname} updated successfully...!`, { autoClose: 750 });
                 navigate("/function-view-products");
             } catch (err) {
-                toast.warn(err.message, err, { autoClose: 750 });
+                toast.error("Failed to update product", { autoClose: 750 });
+                console.error(err);
             }
-        }
-    },
-
-    onFileChange = (e) => {
-        let files = e.target.files;
-        if (files.length > 0) {
-            let file = files[0], reader = new FileReader();
-            reader.onload = (e) => {
-                setFile(e.target.result);
-            };
-            reader.readAsDataURL(file);
-        } else {
-            setFile(null);
         }
     },
 
     handleClear = () => {
         setProduct({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" });
-        setFile(null);
     },
 
     { pname, poldprice, pnewprice, pqty, pdesc } = product;
@@ -75,32 +70,25 @@ const FunctionUpdateProduct = () => {
     return (
         <>
             <div className="add-div view-prod-btn-div">
-                <h1 className='pro-head'> Update Product </h1>
+                <h1 className='pro-head'>Update Product</h1>
                 <PiArrowCircleLeftThin size={35} className="pro-btn dec-btn" onClick={() => navigate("/function-view-products")} data-tip data-for="goBack" />
-                <ReactTooltip id="goBack" place="bottom" effect="solid"> Click here to go to products page </ReactTooltip>
+                <ReactTooltip id="goBack" place="bottom" effect="solid">Click here to go to products page</ReactTooltip>
             </div>
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
                     <div className="pro-row-data img-row-data">
-                        {file ? (
-                            <img src={file} alt="Preview" className="preview-img" />
-                        ) : (
-                            <>
-                                <img src={hdImg} alt="Preview" className="preview-img" />
-                                <input type="file" accept="image/*" onChange={onFileChange} />
-                            </>
-                        )}
+                        <h1 className='pro-head'>image here</h1>
                     </div>
                     <div className="pro-row-data">
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pname"> Product Name </label>
+                            <label className='pro-label' htmlFor="pname">Product Name</label>
                             <input className='product-input' type="text" name='pname' value={pname} placeholder='Enter Your Product Name'
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pqty"> Product Quantity </label>
+                            <label className='pro-label' htmlFor="pqty">Product Quantity</label>
                             <input className='product-input' type="number" name='pqty' value={pqty} placeholder='Enter Your Product Quantity'
                                 onChange={handleChange}
                             />
@@ -109,14 +97,14 @@ const FunctionUpdateProduct = () => {
 
                     <div className="pro-row-data">
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="poldprice"> Product Old Price </label>
+                            <label className='pro-label' htmlFor="poldprice">Product Old Price</label>
                             <input className='product-input' type="number" name='poldprice' value={poldprice} placeholder='Enter Your Product Old Price'
                                 onChange={handleChange}
                             />
                         </div>
 
                         <div className="form-group">
-                            <label className='pro-label' htmlFor="pnewprice"> Product New Price </label>
+                            <label className='pro-label' htmlFor="pnewprice">Product New Price</label>
                             <input className='product-input' type="number" name='pnewprice' value={pnewprice} placeholder='Enter Your Product New Price'
                                 onChange={handleChange}
                             />
@@ -124,7 +112,7 @@ const FunctionUpdateProduct = () => {
                     </div>
 
                     <div className="form-group">
-                        <label className='pro-label' htmlFor="pdesc"> Product Description </label>
+                        <label className='pro-label' htmlFor="pdesc">Product Description</label>
                         <textarea className='product-textarea' name='pdesc' value={pdesc} placeholder='Enter Your Product Description'
                             onChange={handleChange} rows="2" cols="50"
                         ></textarea>
@@ -132,9 +120,9 @@ const FunctionUpdateProduct = () => {
 
                     <div className="btn-div">
                         <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearProduct" onClick={handleClear} />
-                        <ReactTooltip id="clearProduct" place="bottom" effect="solid"> Clear the product fields </ReactTooltip>
-                        <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={handleUpdate} />
-                        <ReactTooltip id="updateProduct" place="bottom" effect="solid"> Update the product </ReactTooltip>
+                        <ReactTooltip id="clearProduct" place="bottom" effect="solid">Clear the product fields</ReactTooltip>
+                        <PiTelegramLogoThin size={35} data-tip data-for="updateProduct" className="pro-btn inc-btn" onClick={handleUpdate} />
+                        <ReactTooltip id="updateProduct" place="bottom" effect="solid">Update the product</ReactTooltip>
                     </div>
                 </form>
             </div>

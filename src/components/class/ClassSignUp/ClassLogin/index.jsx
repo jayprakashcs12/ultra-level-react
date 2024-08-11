@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { PiPencilThin } from 'react-icons/pi';
+import { PiTelegramLogoThin } from 'react-icons/pi';
 import ReactTooltip from 'react-tooltip';
 import { CiUndo } from 'react-icons/ci';
 import { toast } from 'react-toastify';
@@ -79,7 +79,7 @@ class ClassLogin extends Component {
                         <div className="btn-div">
                             <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearLogin" onClick={this.handleClear} />
                             <ReactTooltip id="clearLogin" place="bottom" effect="solid"> Clear the login fields </ReactTooltip>
-                            <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="doLogin" onClick={this.handleLogin} />
+                            <PiTelegramLogoThin size={35} className="pro-btn inc-btn" data-tip data-for="doLogin" onClick={this.handleLogin} />
                             <ReactTooltip id="doLogin" place="bottom" effect="solid"> Login to app </ReactTooltip>
                         </div>
 

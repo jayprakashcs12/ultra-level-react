@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { PiArrowCircleLeftThin, PiPencilThin } from "react-icons/pi";
-import hdImg from "../../../../assets/img/products/app-product.png";
+import { PiArrowCircleLeftThin, PiTelegramLogoThin } from "react-icons/pi";
+// import hdImg from "../../../../assets/img/products/app-product.png";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
@@ -14,10 +14,7 @@ const FunctionAddProduct = () => {
     }, []);
 
     let [product, setProduct] = useState({ pname: "", poldprice: "", pnewprice: "", pqty: "", pdesc: "" }),
-    [file, setFile] = useState(''),
-
     navigate = useNavigate(),
-    [imgPreviewUrl, setImgPreviewUrl] = useState(hdImg),
 
     handleChange = (e) => {
 
@@ -27,31 +24,19 @@ const FunctionAddProduct = () => {
 
     handleAdd = async (e) => {
         e.preventDefault();
-        let { pname, pqty } = product;
-        if (!pname || !poldprice || !pqty) {
+        let { pname, poldprice, pnewprice, pqty, pdesc } = product;
+        
+        if (!pname) {
             toast.warn("All fields are required...!", { autoClose: 750 });
         } else {
-            let payload = { pname, poldprice, pqty };
+            let payload = { pname, poldprice, pnewprice, pqty, pdesc };
             try {
-                await axiosInstance.post('products', payload);
+                await axiosInstance.post('/products', payload);
                 toast.success(`${pname} added successfully...!`, { autoClose: 750 });
-                navigate("/fuction-view-products");
+                navigate("/function-view-products");
             } catch (err) {
                 toast.warn(err.message, err, { autoClose: 750 });
             }
-        }
-    },
-
-    onFileChange = (e) => {
-        let files = e.target.files;
-        if (files.length > 0) {
-            let file = files[0], reader = new FileReader();
-            reader.onload = (e) => {
-                setFile(e.target.result);
-            };
-            reader.readAsDataURL(file);
-        } else {
-            setFile(null);
         }
     },
 
@@ -72,14 +57,7 @@ const FunctionAddProduct = () => {
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
                     <div className="pro-row-data img-row-data">
-                        {file ? (
-                            <img src={file} alt="Preview" className="preview-img" />
-                        ) : (
-                            <>
-                                <img src={hdImg} alt="Preview" className="preview-img" />
-                                <input type="file" accept="image/*" onChange={onFileChange} />
-                            </>
-                        )}
+                        <h1 className='pro-head'> image here </h1>
                     </div>
                     <div className="pro-row-data">
                         <div className="form-group">
@@ -123,7 +101,7 @@ const FunctionAddProduct = () => {
                     <div className="btn-div">
                         <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearProduct" onClick={handleClear} />
                         <ReactTooltip id="clearProduct" place="bottom" effect="solid"> Clear the product fields </ReactTooltip>
-                        <PiPencilThin size={35} className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={handleAdd} />
+                        <PiTelegramLogoThin size={35} className="pro-btn inc-btn" data-tip data-for="updateProduct" onClick={handleAdd} />
                         <ReactTooltip id="addProduct" place="bottom" effect="solid"> Add the product </ReactTooltip>
                     </div>
                 </form>
