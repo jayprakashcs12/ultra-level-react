@@ -70,16 +70,16 @@ const FunctionViewProducts = () => {
                             <p className='prod-para'>
                                 <b> {calculateDiscount({ oldPrice: x.poldprice, newPrice: x.pnewprice })} % </b> 
                             </p>
-                            <div className="btn-div">
+                            <div className="btn-div act-btn-div">
                                 <Link className='act-btn link-btn' to={`/function-view-product/${x.id}`}> 
-                                    <PiEyeThin size={35} className="pro-btn reset-btn" data-tip data-for={`viewProduct-${x.id}`} />
+                                    <PiEyeThin size={35} className="pro-btn view-btn" data-tip data-for={`viewProduct-${x.id}`} />
                                 </Link>
                                 <ReactTooltip id={`viewProduct-${x.id}`} place="bottom" effect="solid">View the product</ReactTooltip>
-                                <PiTrashLight size={35} className="pro-btn inc-btn" onClick={() => handleDelete(x.id, x.pname)} 
+                                <PiTrashLight size={35} className="pro-btn reset-btn" onClick={() => handleDelete(x.id, x.pname)} 
                                     data-tip data-for={`deleteProduct-${x.id}`} />
                                 <ReactTooltip id={`deleteProduct-${x.id}`} place="bottom" effect="solid">Delete the product</ReactTooltip>
                                 <Link className='act-btn link-btn' to={`/function-update-product/${x.id}`}> 
-                                    <PiPencilThin size={35} className="pro-btn reset-btn" data-tip data-for={`updateProduct-${x.id}`} />
+                                    <PiPencilThin size={35} className="pro-btn edit-btn" data-tip data-for={`updateProduct-${x.id}`} />
                                 </Link>
                                 <ReactTooltip id={`updateProduct-${x.id}`} place="bottom" effect="solid">Update the product</ReactTooltip>
                             </div>   

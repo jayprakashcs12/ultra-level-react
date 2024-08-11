@@ -113,6 +113,10 @@
     margin: 1% auto;
 }
 
+.act-btn-div {
+    padding: 5% 0;
+}
+
 .content-img, .hoc-img {
     width: 50%;
 }
@@ -150,12 +154,21 @@
     color: var(--color038);
 }
 
+.edit-btn {
+    color: var(--color14);
+}
+
 .inc-btn, .upload-btn {
     color: var(--color019);
 }
 
 .reset-btn {
     color: var(--color039);
+}
+
+
+.view-btn {
+    color: var(--color10);
 }
 
 .product-list-div, .student-list-div {
