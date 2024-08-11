@@ -29,7 +29,7 @@ const Contact = () => {
     handleSubmit = async (e) => {
         e.preventDefault();
         if (!fname || !email || !mobile) {
-            toast.warn("Please fill out all required fields...!");
+            toast.warn("Please fill out all required fields...!", {autoClose : 750});
             return;
         }
 
@@ -43,7 +43,7 @@ const Contact = () => {
             toast.success(`${fullName} submitted form successfully...!` );
             setContactData({ fname: "", lname: "", email: "", mobile: "", message: "" });
         } catch (err) {
-            toast.error("Failed to submit the form. Please try again later :", err, {autoClose : 750});
+            toast.error("Please try again later :", err, {autoClose : 750});
         }
     },
 
