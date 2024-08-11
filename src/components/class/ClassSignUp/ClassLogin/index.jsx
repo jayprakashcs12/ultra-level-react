@@ -59,7 +59,7 @@ class ClassLogin extends Component {
 
     render() {
         
-        let { fname, email, password } = this.state.loginData;
+        let { email, password } = this.state.loginData;
 
         return (
             <>

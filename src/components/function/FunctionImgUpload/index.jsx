@@ -35,7 +35,7 @@ const FunctionImgUpload = () => {
         selectFiles.forEach(file => formData.append('images', file));
 
         try {
-            let resp = await axiosInstance.post('images', formData, {
+            let resp = await axiosInstance.post('/imagesData', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             console.log('Image uploaded successfully...!', resp);
