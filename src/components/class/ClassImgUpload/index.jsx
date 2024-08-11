@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react';
-import imgUploadImage from "../../../assets/img/background/chennai-exp-02.jpg";
+import imgUpload from "../../../assets/img/background/chennai-exp-02.jpg";
 import axiosInstance from '../../helpers/axiosInstance';
 import { PiUploadSimpleThin } from "react-icons/pi";
 import ReactTooltip from 'react-tooltip';
@@ -14,14 +14,14 @@ export default class ClassImgUpload extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { selectedFiles: [], imagePreviews: [] };
+        this.state = { selectedFiles: [], imgPreviews: [] };
         this.fileInputRef = createRef();
     }
 
     handleFileChange = (e) => {
         let files = Array.from(e.target.files),
-        imagePreviews = files.map(file => URL.createObjectURL(file));
-        this.setState({ selectedFiles: files, imagePreviews });
+        imgPreviews = files.map(file => URL.createObjectURL(file));
+        this.setState({ selectedFiles: files, imgPreviews });
     };
 
     handleUpload = async () => {
@@ -48,29 +48,29 @@ export default class ClassImgUpload extends Component {
     };
 
     handleClear = () => {
-        this.setState({ selectedFiles: [], imagePreviews: [] });
+        this.setState({ selectedFiles: [], imgPreviews: [] });
         this.fileInputRef.current.value = null;
         toast.warn('Images cleared successfully...!', { autoClose: 750 });
     };
 
     render() {
         
-        let { imagePreviews } = this.state;
+        let { imgPreviews } = this.state;
 
         return (
             <>
                 <h1 className='pro-head'> Class Image Upload </h1>
                 <div className='pro-div img-upload-div'>
                     <div className="main-div multi-img-div">
-                        {imagePreviews && imagePreviews.length > 0 ? (
+                        {imgPreviews && imgPreviews.length > 0 ? (
                             <div className="img-preview">
-                                {imagePreviews.map((img, i) => (
+                                {imgPreviews.map((img, i) => (
                                     <img key={i} src={img} alt={`Preview ${i}`} className='img-upload' />
                                 ))}
                             </div>
                         ) : (
                             <>
-                                <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> 
+                                <img src={imgUpload} alt={imgUpload} className='content-img' /> 
                             </>
                         )}
                         <input className='file-upload' type="file" multiple onChange={this.handleFileChange} ref={this.fileInputRef} /> 
