@@ -8,16 +8,13 @@ import { toast } from 'react-toastify';
 
 const FunctionImgUpload = () => {
 
-    let [selectFiles, setSelectFiles] = useState([]),
-        [imgPreviews, setImgPreviews] = useState([]),
-        fileInputRef = useRef();
-
     useEffect(() => {
         document.title = "Function Image Upload";
     }, []);
 
-    let handleFileChange = (e) => {
-        
+    let [selectFiles, setSelectFiles] = useState([]), [imgPreviews, setImgPreviews] = useState([]), fileInputRef = useRef(),
+
+    handleFileChange = (e) => {
         let files = Array.from(e.target.files),
         previews = files.map(file => URL.createObjectURL(file));
         setSelectFiles(files);
