@@ -69,3 +69,24 @@
         width: 100%;
     }
 }
+
+@media (max-width: 1024px) {
+    .img-upload {
+        flex: 1 0 20%; /* 5 images per row */
+        max-width: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-upload {
+        flex: 1 0 33.33%; /* 3 images per row */
+        max-width: 33.33%;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-upload {
+        flex: 1 0 50%; /* 2 images per row */
+        max-width: 50%;
+    }
+}

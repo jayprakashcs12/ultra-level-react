@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import imgUploadImage from "../../../assets/img/background/chennai-exp-02.jpg";
+import imgUpload from "../../../assets/img/background/chennai-exp-02.jpg";
 import axiosInstance from '../../helpers/axiosInstance';
 import { PiUploadSimpleThin } from "react-icons/pi";
 import ReactTooltip from 'react-tooltip';
@@ -8,8 +8,8 @@ import { toast } from 'react-toastify';
 
 const FunctionImgUpload = () => {
 
-    let [selectedFiles, setSelectedFiles] = useState([]),
-        [imagePreviews, setImagePreviews] = useState([]),
+    let [selectFiles, setSelectFiles] = useState([]),
+        [imgPreviews, setImgPreviews] = useState([]),
         fileInputRef = useRef();
 
     useEffect(() => {
@@ -20,19 +20,19 @@ const FunctionImgUpload = () => {
         
         let files = Array.from(e.target.files),
         previews = files.map(file => URL.createObjectURL(file));
-        setSelectedFiles(files);
-        setImagePreviews(previews);
+        setSelectFiles(files);
+        setImgPreviews(previews);
     },
 
     handleUpload = async () => {
 
-        if (selectedFiles.length === 0) {
+        if (selectFiles.length === 0) {
             toast.warn('Please select at least 1 image to upload...!', { autoClose: 750 });
             return;
         }
 
         let formData = new FormData();
-        selectedFiles.forEach(file => formData.append('images', file));
+        selectFiles.forEach(file => formData.append('images', file));
 
         try {
             let resp = await axiosInstance.post('images', formData, {
@@ -47,8 +47,8 @@ const FunctionImgUpload = () => {
     },
 
     handleClear = () => {
-        setSelectedFiles([]);
-        setImagePreviews([]);
+        setSelectFiles([]);
+        setImgPreviews([]);
         fileInputRef.current.value = null; 
         toast.warn('Images cleared successfully...!', { autoClose: 750 });
     };
@@ -58,15 +58,15 @@ const FunctionImgUpload = () => {
             <h1 className='pro-head'> Function Image Upload </h1>
             <div className='pro-div img-upload-div'>
                 <div className="main-div multi-img-div">
-                    {imagePreviews && imagePreviews.length > 0 ? (
+                    {imgPreviews && imgPreviews.length > 0 ? (
                         <div className="img-preview">
-                            {imagePreviews.map((img, i) => (
+                            {imgPreviews.map((img, i) => (
                                 <img key={i} src={img} alt={`Preview ${i}`} className='img-upload' />
                             ))}
                         </div>
                     ) : (
                         <>
-                            <img src={imgUploadImage} alt={imgUploadImage} className='content-img' /> 
+                            <img src={imgUpload} alt={imgUpload} className='content-img' /> 
                         </>
                     )}
                     <input className='file-upload' type="file" multiple onChange={handleFileChange} ref={fileInputRef} />
