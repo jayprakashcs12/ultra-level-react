@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiArrowCircleLeftThin, PiTelegramLogoThin } from "react-icons/pi";
-// import hdImg from "../../../../assets/img/products/add-product.png";
+import proImg from "../../../../assets/img/products/add-product.png";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
@@ -57,7 +57,7 @@ const FunctionAddProduct = () => {
             <div className="pro-div view-products-div">
                 <form className='pro-state'>
                     <div className="pro-row-data img-row-data">
-                        <h1 className='pro-head'> image here </h1>
+                        <img src={proImg} alt={proImg} className='default-img' />
                     </div>
                     <div className="pro-row-data">
                         <div className="form-group">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import proImg from "../../../assets/img/products/add-product.png";
 import { PiPencilThin, PiTrashLight } from "react-icons/pi";
 import axiosInstance from '../../helpers/axiosInstance';
 import { Link, useNavigate } from 'react-router-dom';
@@ -64,7 +63,6 @@ const FunctionViewProducts = () => {
                         <div key={x.id} className='product-list-div'>
                             <p className='prod-para'>{i + 1}</p>
                             <p className='prod-para'><b>{x.pname}</b></p>
-                            <img src={proImg} alt={proImg} style={{height:"80px", margin:"0 auto"}} />
                             <p className='prod-para price-para'>
                                 <strike><b>₹ {x.poldprice} /-</b></strike> 
                                 <b>₹ {x.pnewprice} /-</b>

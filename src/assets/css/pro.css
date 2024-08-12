@@ -137,12 +137,16 @@
     height: 160px;
 }
 
-.pro-div::-webkit-scrollbar-thumb, .pro-btn, .preview-img {
+.pro-div::-webkit-scrollbar-thumb, .pro-btn, .preview-img, .default-img {
     cursor: pointer;
 }
 
-.pro-login-state, .pro-state, .hoc-img {
+.pro-login-state, .pro-state, .hoc-img, .default-img  {
     margin: 0 auto;
+}
+
+.default-img {
+    height: 90px;
 }
 
 .pro-login-state {
