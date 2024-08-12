@@ -10,10 +10,7 @@ const Contact = () => {
         document.title = "Contact Us";
     }, []);
 
-    let [contactData, setContactData] = useState({
-        fname: "", lname: "", email: "", mobile: "", message: ""
-    }),
-
+    let [contactData, setContactData] = useState({ fname: "", lname: "", email: "", mobile: "", message: "" }),
     { fname, lname, email, mobile, message } = contactData,
 
     contactsData = (e) => {
@@ -29,7 +26,8 @@ const Contact = () => {
     handleSubmit = async (e) => {
         e.preventDefault();
         if (!fname || !email || !mobile) {
-            toast.warn("Please fill out all required fields...!", {autoClose : 750});
+            let missingField = !fname ? "First Name" : !email ? "email ID" : "Mobile Number";
+            toast.warn(`Please provide input to ${missingField} fields...!`, { autoClose: 750 });
             return;
         }
 
@@ -38,9 +36,10 @@ const Contact = () => {
             toast.warn(`${email} is not valid email id...!`, {autoClose : 750});
             return;
         }
+
         try {
             let fullName = fname + " " + lname;
-            toast.success(`${fullName} submitted form successfully...!` );
+            toast.success(`${fullName} submitted form successfully...!`, {autoClose : 750});
             setContactData({ fname: "", lname: "", email: "", mobile: "", message: "" });
         } catch (err) {
             toast.error("Please try again later :", err, {autoClose : 750});
@@ -99,9 +98,9 @@ const Contact = () => {
 
                     <div className="btn-div">
                         <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearContact" onClick={handleClear} />
-                        <ReactTooltip id="clearContact" place="bottom" effect="solid"> Clear the input fields </ReactTooltip>
+                        <ReactTooltip id="clearContact" place="left" effect="solid"> Clear the input fields </ReactTooltip>
                         <PiTelegramLogoThin size={35} className="pro-btn inc-btn" data-tip data-for="sendContact" onClick={handleSubmit} />
-                        <ReactTooltip id="sendContact" place="bottom" effect="solid"> Send the message </ReactTooltip>
+                        <ReactTooltip id="sendContact" place="right" effect="solid"> Send the message </ReactTooltip>
                     </div>
                 </form>
             </div>
