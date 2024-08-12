@@ -98,9 +98,9 @@ const Contact = () => {
 
                     <div className="btn-div">
                         <CiUndo size={35} className="pro-btn reset-btn" data-tip data-for="clearContact" onClick={handleClear} />
-                        <ReactTooltip id="clearContact" place="left" effect="solid"> Clear the input fields </ReactTooltip>
+                        <ReactTooltip id="clearContact" place="bottom" effect="solid"> Clear the input fields </ReactTooltip>
                         <PiTelegramLogoThin size={35} className="pro-btn inc-btn" data-tip data-for="sendContact" onClick={handleSubmit} />
-                        <ReactTooltip id="sendContact" place="right" effect="solid"> Send the message </ReactTooltip>
+                        <ReactTooltip id="sendContact" place="bottom" effect="solid"> Send the message </ReactTooltip>
                     </div>
                 </form>
             </div>

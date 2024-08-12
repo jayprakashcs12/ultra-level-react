@@ -13,7 +13,7 @@ const FunctionParents = (props) => {
     return (
         
         <>
-            <div className="eshop-div payments-div">
+            <div className="eshop-div parents-div">
                 <h1 className='sub-head'>Function Parents Details</h1>
                 {count > 0 && paymentsData.length > 0 && (
                     <>

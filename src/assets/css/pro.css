@@ -47,12 +47,16 @@
     gap: 5px;
 }
 
-.class-products-div, .function-products-div {
-    background-color: var(--color10);
+.products-div {
+    background-color: var(--color12);
 }
 
-.payments-div {
-    background-color: var(--color04);
+.payments-div, .parents-div {
+    background-color: var(--color13);
+}
+
+.children-div {
+    background-color: var(--color14);
 }
 
 .counter-apps, .eshop-div, .student-list-div, .multi-img-div, .product-list-div, .alr-reg-div, .main-hoc-div {
@@ -150,19 +154,23 @@
 }
 
 .dec-btn {
-    color: var(--color038);
+    color: var(--color039);
 }
 
 .edit-btn {
     color: var(--color14);
 }
 
-.inc-btn, .upload-btn {
-    color: var(--color019);
+.inc-btn {
+    color: var(--color10);
+}
+
+.upload-btn {
+    color: var(--color16);
 }
 
 .reset-btn {
-    color: var(--color039);
+    color: var(--color009);
 }
 
 

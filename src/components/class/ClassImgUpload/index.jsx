@@ -1,9 +1,8 @@
 import React, { Component, createRef } from 'react';
 import imgUpload from "../../../assets/img/background/chennai-exp-02.jpg";
+import { PiUploadSimpleThin, PiPowerThin } from "react-icons/pi";
 import axiosInstance from '../../helpers/axiosInstance';
-import { PiUploadSimpleThin } from "react-icons/pi";
 import ReactTooltip from 'react-tooltip';
-import { CiPower } from "react-icons/ci";
 import { toast } from 'react-toastify';
 
 export default class ClassImgUpload extends Component {
@@ -76,7 +75,7 @@ export default class ClassImgUpload extends Component {
                         <input className='file-upload' type="file" multiple onChange={this.handleFileChange} ref={this.fileInputRef} /> 
                     </div>
                     <div className="btn-div">
-                        <CiPower size={35} className='pro-btn reset-btn' onClick={this.handleClear} data-tip data-for="resetImage" />
+                        <PiPowerThin size={35} className='pro-btn reset-btn' onClick={this.handleClear} data-tip data-for="resetImage" />
                         <ReactTooltip id="resetImage" place="bottom" effect="solid"> Reset the Image Upload </ReactTooltip>
                         <PiUploadSimpleThin size={35} className='pro-btn upload-btn' onClick={this.handleUpload} data-tip data-for="uploadImage" />
                         <ReactTooltip id="uploadImage" place="bottom" effect="solid"> Select Image to Upload </ReactTooltip>
