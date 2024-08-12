@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import productImage from "../../../../assets/img/products/samsung-galaxy.png";
+import productImage from "../../../../assets/img/products/samsung.png";
 import { CiCircleMinus, CiCirclePlus, CiPower } from "react-icons/ci";
 import productsData from "../../../../server/data.json";
 import ReactTooltip from 'react-tooltip';

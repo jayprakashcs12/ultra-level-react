@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PiArrowCircleLeftThin, PiTelegramLogoThin } from "react-icons/pi";
-// import hdImg from "../../../../assets/img/products/app-product.png";
+// import hdImg from "../../../../assets/img/products/add-product.png";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
