@@ -12,7 +12,7 @@ export default class ClassPayments extends Component {
 
         return (
             <>
-                <div className="eshop-div payments-div">
+                <div className="eshop-div eshop-payments-div">
                     <h1 className='sub-head'>Class Payments Details</h1>
                     {count > 0 && paymentsData.length > 0 && (
                         <>

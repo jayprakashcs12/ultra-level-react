@@ -60,7 +60,7 @@ export default class ClassGrandParents extends Component {
         return (
             <>
                 <div className="pro-div parent-div props-div">
-                    <div className="eshop-div products-div">
+                    <div className="eshop-div grand-parents-div">
                         <h1 className='sub-head'>Class Grand Parents Details</h1>
                         <h2 className='product-head'> Product Name : <span className='product-desc'> {product?.pname} </span> </h2>
                         <img className='product-img' src={productImage} alt={productImage} />

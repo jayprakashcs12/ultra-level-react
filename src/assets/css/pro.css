@@ -47,11 +47,11 @@
     gap: 5px;
 }
 
-.products-div {
+.eshop-products-div, .grand-parents-div {
     background-color: var(--color12);
 }
 
-.payments-div, .parents-div {
+.eshop-payments-div, .parents-div {
     background-color: var(--color13);
 }
 

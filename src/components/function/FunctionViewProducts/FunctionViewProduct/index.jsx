@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import proImg from "../../../../assets/img/products/add-product.png";
 import axiosInstance from '../../../helpers/axiosInstance';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PiArrowCircleLeftThin } from "react-icons/pi";
@@ -43,6 +44,7 @@ const FunctionViewProduct = () => {
                 <p>{pprice}</p>
                 <p>{pqty}</p>
                 <p>{pdesc}</p>
+                <img src={proImg} alt={proImg} style={{height:"150px", margin:"0 auto"}} />
             </div>
         </>
     );
